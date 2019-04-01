@@ -1,0 +1,14 @@
+<div class="container top_background">
+  <div class="signup-form">
+    <h1>新規登録</h1>
+    <hr>
+    <%= form_for @user do |f| %>
+      <%= f.label :email %>
+      <%= f.text_field :email, class: "form-control" %>
+
+      <%= f.label :password %>
+      <%= f.text_field :password, class: "form-control" %>
+    <% end %>
+  </div>
+</div>
+

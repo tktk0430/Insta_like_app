@@ -34,11 +34,6 @@ header{
 }
 
 main{
-  .container{
-    background-image: image-url('top_background.jpg');
-    background-size: cover;
-    height: 700px;
-  }
   .btn{
     width: 300px;
     margin: 10px auto 0px;
@@ -48,8 +43,25 @@ main{
   }
 }
 
-.content-wrapper{
+.top_background{
+  background-image: image-url('top_background.jpg');
+  background-size: cover;
   height: 700px;
+}
+
+.content-wrapper{
+  min-height: 700px;
   padding: 10px;
   background-color: var(--content_background_color);
+}
+
+.signup-form{
+  background-color: var(--content_background_color);
+  width: 60%;
+  padding: 30px;
+  margin: 5% auto 0;
+  input{
+    margin-bottom: 20px;
+  }
+  border-radius: 10px;
 }
