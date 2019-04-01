@@ -10,6 +10,13 @@ class UsersController < ApplicationController
   end
 
   def create
+    @user=User.new(user_params)
+    binding.pry
+    if @user.save
+      redirect_to @user, notice: "ようこそ！"
+    else
+      render 'users/new'
+    end
   end
 
   def edit
@@ -20,4 +27,11 @@ class UsersController < ApplicationController
 
   def destroy
   end
+
+  private
+    def user_params
+      params.require(:user).permit(
+        :name, :email, :password, :password_confirmation
+      )
+    end
 end

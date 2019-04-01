@@ -1,0 +1,11 @@
+<%= form_for(:session, url: login_path) do |f| %>
+  <%= render 'partials/errors', obj:f.object %>
+  
+  <%= f.label :email %>
+  <%= f.text_field :email, class: "form-control",autofocus: true %>
+
+  <%= f.label :password %>
+  <%= f.text_field :password, class: "form-control" %>
+
+  <%= f.submit "ログイン", class:"btn btn-primary" %>
+<% end %>
