@@ -1,0 +1,55 @@
+@import url(ress/ress.css);
+@import "bootstrap-sprockets";
+@import "bootstrap";
+:root{
+  --content_background_color : #1C1C1C;
+}
+
+body {
+  background-color: black;
+  color:white;
+}
+
+a {
+  color: inherit;
+}
+a:hover {
+  text-decoration: none;
+}
+
+header{
+  height: 60px;
+  border-bottom: 0.5px solid #fff;
+  margin-bottom: 5px;
+  #logo{
+    float: left;
+    font-weight: bold;
+    font-size: 1.9em;
+    line-height: 60px;
+  }
+  nav{
+    margin-top: 10px;
+    font-size: 1.2em;
+  }
+}
+
+main{
+  .container{
+    background-image: image-url('top_background.jpg');
+    background-size: cover;
+    height: 700px;
+  }
+  .btn{
+    width: 300px;
+    margin: 10px auto 0px;
+  }
+  #signup-btn{
+    margin-top: 400px;
+  }
+}
+
+.content-wrapper{
+  height: 700px;
+  padding: 10px;
+  background-color: var(--content_background_color);
+}
