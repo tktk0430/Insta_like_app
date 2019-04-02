@@ -1,2 +1,32 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<% @page_title = @user.name %>
+
+<div class="container user-show">
+  <div class="row">
+    <div class="user-profile clearfix col-md-4">
+      <div class="abstract">
+        <%= gravatar_for(@user, size: 100) %>
+        <h4><%= @user.name %></h4>
+        <p><%= @user.email %></p>
+      </div>
+      <div class="introduction">
+        <p><%= @user.introduction %></p>
+      </div>
+      <div class="assets">
+        <%= link_to 'フォロー', '#' %>
+        <%= link_to 'フォロワー', '#' %>
+        <%= link_to '画像投稿', '#' %>
+        <%= link_to 'いいね', '#' %>
+      </div>
+    </div>
+    <div class="user-contents col-md-8">
+      <div class="user-posts">
+        <h2>投稿画像</h2>
+        <p>user.posts</p>
+      </div>
+      <div class="user-posts">
+        <h2>人気の画像</h2>
+        <p>user.popular_posts</p>
+      </div>
+    </div>
+  </div>
+</div>
