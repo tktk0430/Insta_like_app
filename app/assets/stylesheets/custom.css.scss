@@ -1,5 +1,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome";
+
 @import url(ress/ress.css);
 
 .clearfix::after {
@@ -19,7 +21,9 @@ ul{
 a {
   color: inherit;
 }
-
+hr{
+  margin:5px;
+}
 .alert{
   margin-bottom: 5px;
 }
@@ -119,17 +123,29 @@ main{
 .user-show-edit{
   .user-profile{
     border-radius: 10px;
-    padding: 20px;
+    padding: 20px 20px 10px;
     background-color: var(--content_background_color);
     textarea{
       min-height: 150px;
     }
+    .sex-form{
+      margin-bottom: 8px;
+    }
     .abstract{
       min-height: 100px;
+      margin-bottom: 15px;
+      position: relative;
+      a{
+        position: absolute;
+        top:0px;
+        right: 5px;
+        font-size: 30px;
+        margin: 0;
+        padding: 0;
+      }
     }
     .introduction{
       min-height: 100px;
-      border-bottom: 0.5px solid lightgray;
     }
     .assets{
       display: grid;
@@ -147,16 +163,19 @@ main{
       margin-right: 20px;
     }
     h4{
-      padding: 10px 0 10px;
+      padding: 18px 0 10px;
       border-bottom: 0.5px solid lightgray;
     }
     p{
-      margin-top: 10px;
+      margin-top: 5px;
     }
     a{
       display: block;
-      padding: 20px;
+      padding: 5px
     }
+  }
+  .btn-cancel{
+    float: right;
   }
   .user-contents{
     h2{
@@ -170,3 +189,7 @@ main{
   }
 }
 
+.btn-danger{
+  padding:0;
+  margin: 0;
+}

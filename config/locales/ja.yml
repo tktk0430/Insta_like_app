@@ -5,7 +5,14 @@ ja:
     attributes:
       user:
         email: メールアドレス
-        name: ユーザ名
+        name: 名前
+        account: ユーザーネーム
+        sex: 性別
+        sex_0: 男性
+        sex_1: 女性
+        sex_2: 回答なし
+        web: ウェブサイト
+        tel: 電話番号
         introduction: 自己紹介
         admin: 管理者
         password: パスワード

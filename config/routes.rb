@@ -2,7 +2,10 @@ Rails.application.routes.draw do
   root 'home#top'
   get 'about', to: 'home#about'
 
-  resources :users
+  resources :users do
+    get 'search', on: :collection
+  end
+  
   get 'signup', to: 'users#new'
 
   resources :sessions

@@ -2,11 +2,16 @@
   <div class="abstract">
     <%= gravatar_for(@user, size: 100) %>
     <h4><%= @user.name %></h4>
-    <p><%= @user.email %></p>
+    <%= link_to edit_user_path(@user) do %>
+      <i class="top-right-icon fa fa-cog"></i>
+    <% end %>
+    <p><%= "@#{@user.account}" %></p>
   </div>
   <div class="introduction">
     <p><%= @user.introduction %></p>
   </div>
+  <%= link_to @user.web, @user.web %>
+  <hr>
   <div class="assets">
     <%= link_to 'フォロー', '#' %>
     <%= link_to 'フォロワー', '#' %>
