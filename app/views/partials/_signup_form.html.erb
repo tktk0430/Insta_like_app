@@ -1,10 +1,11 @@
 <%= form_for @user do |f| %>
   <%= render 'partials/errors', obj:f.object %>
 
-  <%= f.hidden_field :name, value: "No name" %>
+  <%= f.label :name %>
+  <%= f.text_field :name, class: "form-control",autofocus: true%>
 
   <%= f.label :email %>
-  <%= f.text_field :email, class: "form-control",autofocus: true%>
+  <%= f.text_field :email, class: "form-control" %>
 
   <%= f.label :password %>
   <%= f.text_field :password, class: "form-control" %>

@@ -1,13 +1,11 @@
-@import url(ress/ress.css);
 @import "bootstrap-sprockets";
 @import "bootstrap";
-:root{
-  --content_background_color : #1C1C1C;
-}
+@import url(ress/ress.css);
 
-body {
-  background-color: black;
-  color:white;
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
 }
 
 a {
@@ -15,6 +13,20 @@ a {
 }
 a:hover {
   text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
+:root{
+  --content_background_color : #1C1C1C;
+}
+
+body {
+  background-color: black;
+  color:white;
 }
 
 header{
@@ -64,4 +76,21 @@ main{
     margin-bottom: 20px;
   }
   border-radius: 10px;
+}
+
+.users-index{
+  background-color: var(--content_background_color);
+}
+
+.gravatar{
+  float: left;
+  margin-right: 10px;
+}
+
+.user-view{
+  padding:10px;
+  border-bottom: 0.5px solid lightgray;
+  .gravatar{
+    border-radius: 50%;
+  }
 }

@@ -1,8 +1,6 @@
 class User < ApplicationRecord
   has_secure_password
-  with_options presence: true do
-    validates :email
-    validates :name
-    validates :password_digest
-  end
+  validates :email, presence: true
+  validates :name, presence: true
+  validates :password_digest, presence: true
 end
