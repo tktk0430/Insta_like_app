@@ -7,9 +7,21 @@
   display: block;
   clear: both;
 }
+.field_with_errors{
+  input{
+    background-color: pink;
+  }
+}
+ul{
+  list-style: none;
+}
 
 a {
   color: inherit;
+}
+
+.alert{
+  margin-bottom: 5px;
 }
 a:hover {
   text-decoration: none;
@@ -19,7 +31,9 @@ h1, h2, h3, h4, h5, h6, p {
   margin: 0;
   padding: 0;
 }
-
+.container{
+  padding: 0;
+}
 :root{
   --content_background_color : #1C1C1C;
 }

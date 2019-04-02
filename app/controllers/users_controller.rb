@@ -15,7 +15,7 @@ class UsersController < ApplicationController
     @user=User.new(user_params)
     if @user.save
       flash[:success]="ようこそ！"
-      redirect_to users_path
+      redirect_to @user
     else
       render 'users/new'
     end
@@ -36,6 +36,10 @@ class UsersController < ApplicationController
   end
 
   def destroy
+    user=User.find(params[:id])
+    user.destroy
+    flash[:info] = "退会しました"
+    redirect_to root_path
   end
 
   private

@@ -4,8 +4,9 @@
   <div class="row">
     <div class="col-md-4">
       <%= render 'partials/user_profile' %>
-      <ul class="nav">
+      <ul>
         <li><%= link_to 'プロフィール編集', edit_user_path(@user) %></li>
+        <li><%= link_to '退会する', user_path(@user),method: :delete, data: {confirm: "退会しますか？"}%></li>
       </ul>
     </div>
     <div class="user-contents col-md-8">
