@@ -1,0 +1,12 @@
+<div class="user-profile">
+  <%= form_for @user do |f| %>
+    <%= render 'partials/errors', obj:f.object %>
+    <%= f.label :name %>
+    <%= f.text_field :name, class: 'form-control' %>
+
+    <%= f.label :introduction %>
+    <%= f.text_area :introduction, class: 'form-control' %>
+
+    <%= f.submit class: "btn btn-primary"%>
+  <% end %>
+</div>

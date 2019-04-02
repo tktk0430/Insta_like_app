@@ -1,0 +1,16 @@
+<div class="user-profile clearfix">
+  <div class="abstract">
+    <%= gravatar_for(@user, size: 100) %>
+    <h4><%= @user.name %></h4>
+    <p><%= @user.email %></p>
+  </div>
+  <div class="introduction">
+    <p><%= @user.introduction %></p>
+  </div>
+  <div class="assets">
+    <%= link_to 'フォロー', '#' %>
+    <%= link_to 'フォロワー', '#' %>
+    <%= link_to '画像投稿', '#' %>
+    <%= link_to 'いいね', '#' %>
+  </div>
+</div>

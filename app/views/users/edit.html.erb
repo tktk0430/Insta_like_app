@@ -1,2 +1,19 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<% @page_title = "プロフィール編集" %>
+
+<div class="container user-show-edit">
+  <div class="row">
+    <div class="col-md-4">
+      <%= render 'partials/user_edit' %>
+    </div>
+    <div class="user-contents col-md-8 opacified ">
+      <div class="user-posts">
+        <h2>投稿画像</h2>
+        <p>user.posts</p>
+      </div>
+      <div class="user-posts">
+        <h2>人気の画像</h2>
+        <p>user.popular_posts</p>
+      </div>
+    </div>
+  </div>
+</div>

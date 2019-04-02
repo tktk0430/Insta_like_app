@@ -24,6 +24,13 @@ h1, h2, h3, h4, h5, h6, p {
   --content_background_color : #1C1C1C;
 }
 
+.opacified{
+  opacity: 0.3;
+}
+
+.form-control{
+  margin-bottom: 15px;
+}
 body {
   background-color: black;
   color:white;
@@ -58,6 +65,7 @@ main{
   background-image: image-url('top_background.jpg');
   background-size: cover;
   height: 700px;
+  opacity: 0.9;
 }
 
 .content-wrapper{
@@ -94,11 +102,14 @@ main{
   }
 }
 
-.user-show{
+.user-show-edit{
   .user-profile{
     border-radius: 10px;
     padding: 20px;
     background-color: var(--content_background_color);
+    textarea{
+      min-height: 150px;
+    }
     .abstract{
       min-height: 100px;
     }
@@ -137,6 +148,7 @@ main{
     h2{
       border-bottom: 0.5px solid lightgray;
       margin: 10px 0 10px;
+      padding-bottom: 5px;
     }
     .user-posts{
       min-height: 300px;

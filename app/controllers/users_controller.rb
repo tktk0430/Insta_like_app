@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def index
-    @users=User.all
+    @users=User.page(params[:page]).per(10)
   end
 
   def show
@@ -14,7 +14,7 @@ class UsersController < ApplicationController
   def create
     @user=User.new(user_params)
     if @user.save
-      flash[:danger]="ようこそ！"
+      flash[:success]="ようこそ！"
       redirect_to users_path
     else
       render 'users/new'
@@ -22,9 +22,17 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @user=User.find(params[:id])
   end
 
   def update
+    @user=User.find(params[:id])
+    if @user.update_attributes(user_params)
+      flash[:success] = "プロフィールを編集しました"
+      redirect_to @user
+    else
+      render 'users/edit'
+    end
   end
 
   def destroy
