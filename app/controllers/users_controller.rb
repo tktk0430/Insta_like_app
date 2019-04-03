@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :set_default_name, only:[:create,:update]
+
   def index
     @users=User.page(params[:page]).per(10)
   end
@@ -45,7 +47,11 @@ class UsersController < ApplicationController
   private
     def user_params
       params.require(:user).permit(
-        :name, :email, :password, :password_confirmation
+        :name, :email, :account, :sex, :introduction, :web, :tel, :password, :password_confirmation
       )
+    end
+
+    def set_default_name
+      params[:user][:name]="No name" if params[:user][:name].nil? || params[:user][:name].empty?
     end
 end
