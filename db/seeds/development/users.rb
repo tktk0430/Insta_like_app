@@ -2,7 +2,7 @@ User.create!(
   email: "taku@example.com",
   name: "広澤 拓",
   account: "master",
-  introduction: Yoshida::Text.sentence,
+  introduction: Faker::Lorem.sentence(10),
   password: "password",
   password_confirmation: "password",
   admin: true,
@@ -16,7 +16,7 @@ User.create!(
     email: email,
     name: name,
     account: account,
-    introduction: Yoshida::Text.sentence,
+    introduction: Faker::Lorem.sentence(10),
     password: password,
     password_confirmation: password
   )

@@ -1,15 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  email: MyString
-  name: MyString
-  introduction: MyText
-  password_digest: MyString
-  admin: false
+tom:
+  email: tom@gmail.com
+  name: Tom Aaa
+  account: tom
+  introduction: <%= Faker::Lorem.sentence(5) %>
+  password_digest: <%= User.digest('password') %>
+  admin: true
 
-two:
-  email: MyString
-  name: MyString
-  introduction: MyText
-  password_digest: MyString
+bob:
+  email: bob@gmail.com 
+  name: Bob Bbb
+  account: bob
+  introduction: <%= Faker::Lorem.sentence(5) %>
+  password_digest: <%= User.digest('password') %>
   admin: false

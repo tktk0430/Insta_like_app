@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_default_name, only:[:create,:update]
+  before_action :login_user?, only:[:index,:show,:edit,:update,:destroy]
+  before_action :correct_user?, only:[:edit,:update,:destroy]
 
   def index
     @users=User.page(params[:page]).per(10)

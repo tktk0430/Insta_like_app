@@ -1,5 +1,7 @@
 <div class="user-profile clearfix">
-  <a href="<%= edit_user_path(@user) %>" class="top-right-icon fa fa-cog" >プロフィール編集</a>
+  <% if correct_user %>
+    <a href="<%= edit_user_path(@user) %>" class="top-right-icon fa fa-cog" >プロフィール編集</a>
+  <% end %>
   <div class="abstract">
     <%= gravatar_for(@user, size: 100) %>
     <h4><%= @user.name %></h4>

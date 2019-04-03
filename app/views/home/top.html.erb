@@ -1,6 +1,22 @@
 <main>
-  <div class="container top_background">
-    <%= link_to '新規登録する', "/signup", class:"btn btn-lg btn-primary center-block",id:"signup-btn"%>
-    <%= link_to 'ログイン', "/login",class:"btn btn-lg center-block btn-info",id:"signin-btn"%>
-  </div>
+  <% if login? %>
+    <div class="container user-show-edit">
+      <div class="row">
+        <div class="col-md-4">
+          <%= render 'partials/user_profile' %>
+        </div>
+        <div class="user-contents col-md-8">
+          <div class="user-posts">
+            <h2>他のユーザーの投稿画像</h2>
+            <p>user.follower.posts</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% else %>
+    <div class="container top_background">
+      <%= link_to '新規登録する', "/signup", class:"btn btn-lg btn-primary center-block",id:"signup-btn"%>
+      <%= link_to 'ログイン', "/login",class:"btn btn-lg center-block btn-info",id:"signin-btn"%>
+    </div>
+  <% end %>
 </main>
