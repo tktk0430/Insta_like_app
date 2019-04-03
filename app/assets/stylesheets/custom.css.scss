@@ -4,6 +4,10 @@
 
 @import url(ress/ress.css);
 
+@media screen and (max-width: 991px){
+  .none {display:none}
+}
+
 .clearfix::after {
   content: "";
   display: block;
@@ -15,6 +19,16 @@
   }
   textarea{
     background-color: pink;
+  }
+}
+.pagination{
+  display: block;
+  text-align: center;
+  font-size: 15px;
+  letter-spacing: 5px;
+  margin: 20px auto;
+  .current{
+    color: yellow;
   }
 }
 ul{
@@ -84,6 +98,12 @@ main{
   }
 }
 
+.session-maker{
+  .btn{
+    width: 100px;
+    margin-right: 20px;
+  }
+}
 .top_background{
   background-image: image-url('top_background.jpg');
   background-size: cover;
@@ -102,9 +122,6 @@ main{
   width: 60%;
   padding: 30px;
   margin: 5% auto 0;
-  input{
-    margin-bottom: 20px;
-  }
   border-radius: 10px;
 }
 
