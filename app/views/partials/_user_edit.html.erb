@@ -27,9 +27,13 @@
     <%= f.label :tel %>
     <%= f.text_field :tel, class: 'form-control' %>
 
-    <%= f.submit class: "btn btn-primary"%>
-    <%= link_to 'キャンセル', user_path(@user), class:"btn-cancel" %>
+    <%= link_to 'パスワードの変更', edit_password_path(@user) %>
+    <br><br>
+
+    <%= f.submit class: "btn btn-primary btn-block"%>
+    <%= link_to 'キャンセル', user_path(@user), class:"btn btn-default btn-block" %>
   <% end %>
   <hr>
-  <%= link_to '退会する', user_path(@user), method: :delete, data:{confirm: "本当に退会しますか"}, class:"btn btn-danger" %>
+  <br>
+  <%= link_to '退会する', user_path(@user), method: :delete, data:{confirm: "本当に退会しますか"}, class:"btn btn-danger btn-block" %>
 </div>

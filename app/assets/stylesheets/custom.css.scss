@@ -13,6 +13,9 @@
   input{
     background-color: pink;
   }
+  textarea{
+    background-color: pink;
+  }
 }
 ul{
   list-style: none;
@@ -30,7 +33,9 @@ hr{
 a:hover {
   text-decoration: none;
 }
-
+.btn{
+  margin: 5px 0;
+}
 h1, h2, h3, h4, h5, h6, p {
   margin: 0;
   padding: 0;
@@ -130,8 +135,8 @@ main{
     background-color: var(--content_background_color);
     .top-right-icon{
       position: absolute;
-      top: 3px;
-      right: 3px;
+      top: 6px;
+      right: 6px;
     }
     textarea{
       min-height: 150px;
@@ -169,13 +174,6 @@ main{
     p{
       margin-top: 5px;
     }
-    a{
-      display: block;
-      padding: 5px
-    }
-  }
-  .btn-cancel{
-    float: right;
   }
   .user-contents{
     h2{
@@ -187,9 +185,4 @@ main{
       min-height: 300px;
     }
   }
-}
-
-.btn-danger{
-  padding:0;
-  margin: 0;
 }

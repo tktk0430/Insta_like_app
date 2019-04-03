@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   def login_user?
     unless login?
       flash[:danger]="ログインが必要です"
-      redirect_to root_path
+      redirect_to login_path
     end
   end
 

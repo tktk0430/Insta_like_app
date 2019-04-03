@@ -11,4 +11,6 @@ Rails.application.routes.draw do
   resources :sessions
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
+
+  resources :password
 end

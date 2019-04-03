@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_default_name, only:[:create,:update]
+  before_action :set_default_name, only:[:create]
   before_action :login_user?, only:[:index,:show,:edit,:update,:destroy]
   before_action :correct_user?, only:[:edit,:update,:destroy]
 
@@ -18,6 +18,7 @@ class UsersController < ApplicationController
   def create
     @user=User.new(user_params)
     if @user.save
+      login(@user)
       flash[:success]="ようこそ！"
       redirect_to @user
     else
@@ -54,6 +55,6 @@ class UsersController < ApplicationController
     end
 
     def set_default_name
-      params[:user][:name]="No name" if params[:user][:name].nil? || params[:user][:name].empty?
+      params[:user][:name]="名無しさん" if params[:user][:name].nil? || params[:user][:name].empty?
     end
 end
