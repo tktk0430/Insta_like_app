@@ -10,7 +10,7 @@
   <div class="introduction">
     <p><%= @user.introduction %></p>
   </div>
-  <a href="<%= @user.web %>" target="_blank"><%= @user.web&.truncate(30) %></a>
+  <i class="fa fa-home fa-lg"></i> : <a href="<%= @user.web %>" target="_blank"><%= @user.web&.truncate(30) %></a>
   <hr>
   <div class="assets">
     <%= link_to 'フォロー', '#' %>

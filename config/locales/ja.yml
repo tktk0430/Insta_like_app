@@ -16,5 +16,9 @@ ja:
         introduction: 自己紹介
         admin: 管理者
         password: パスワード
-        password_confirmation: パスワード（再入力）
+        password_confirmation: パスワード（確認用）
         password_digest: パスワード
+        current_password: 現在のパスワード
+    errors:
+      messages:
+        wrong: が正しくありません

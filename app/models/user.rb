@@ -10,6 +10,7 @@ class User < ApplicationRecord
   validates :introduction, length: {maximum: 140}
   validates :password,length:{minimum: 6}, allow_nil: true
   validates :web, length: {maximum: 200}
+  attr_accessor :current_password
 
   
 
