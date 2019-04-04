@@ -7,7 +7,7 @@
           <li><%= link_to 'マイページ', user_path(current_user) %></li>
           <li><%= link_to '通知', '#' %></li>
           <li><%= link_to 'ユーザ一覧', users_path %></li>
-          <li><%= link_to 'ログアウト', session_path(current_user), method: :delete %></li>
+          <li><%= link_to 'ログアウト', logout_path, method: :delete %></li>
         <% else %>
           <li><%= link_to '見て頂いた方へ（このサイトについて）', about_path %></li>
           <li><%= link_to 'ログイン', login_path %></li>
