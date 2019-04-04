@@ -11,10 +11,10 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     get signup_path
     assert_difference 'User.count', 1 do
       post users_path,params:{user:{
-                              account: "hogehoge",
-                              email: "hogehoge@gmail.com",
-                              password: "password",
-                              password_confirmation: "password"}}
+                                account: "hogehoge",
+                                email: "hogehoge@gmail.com",
+                                password: "password",
+                                password_confirmation: "password"}}
     end
     user=User.find_by(email: "hogehoge@gmail.com")
     assert_equal user.name, "名無しさん", "ユーザーネームは#{user.name}"

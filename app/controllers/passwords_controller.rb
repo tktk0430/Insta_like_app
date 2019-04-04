@@ -1,7 +1,7 @@
 class PasswordsController < ApplicationController
   before_action :login_user?
 
-  def show
+  def show #update失敗時のurlをgetしたときのルーティングエラー回避
     redirect_to edit_password_path(current_user)
   end
 
