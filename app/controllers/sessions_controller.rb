@@ -12,6 +12,7 @@ class SessionsController < ApplicationController
       flash[:success] = "ログインしました"
       redirect_to @user
     else
+      @user=User.new
       flash.now[:danger]="メールアドレスとパスワードが一致しません"
       render 'sessions/new'
     end

@@ -18,6 +18,6 @@
     <%= f.password_field :password_confirmation, class: "form-control" %>
 
     <%= f.submit "新規登録", class:"btn btn-primary" %>
-    <input class="btn btn-default" value="戻る" onclick="history.back()">
+    <%= link_to '戻る', root_path, class:"btn btn-default"%>
   <% end %>
 </div>
