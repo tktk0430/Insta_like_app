@@ -10,7 +10,19 @@ User.create!(
   password_confirmation: "password",
   admin: true,
 )
-34.times do |n|
+User.create!(
+  email: "test@example.com",
+  name: "テスト太郎",
+  account: "tester",
+  introduction: Faker::Lorem.sentence(20),
+  web: Faker::Internet.url,
+  tel: Faker::PhoneNumber.phone_number,
+  sex: 1,
+  password: "password",
+  password_confirmation: "password",
+  admin: false,
+)
+33.times do |n|
   email="example-#{n}@example.com"
   name=Faker::Name.name
   account="user#{n}"

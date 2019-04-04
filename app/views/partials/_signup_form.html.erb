@@ -2,16 +2,19 @@
   <%= form_for @user do |f| %>
     <%= render 'partials/errors', obj:f.object %>
 
-    <%= f.label :account %>
-    <%= f.text_field :account, class: "form-control",autofocus: true%>
+    <%= f.label :name %>
+    <%= f.text_field :name, class: "form-control",autofocus: true%>
 
-    <%= f.label :email %>
+    <%= f.label :account %><span> (必須)</span>
+    <%= f.text_field :account, class: "form-control" %>
+
+    <%= f.label :email %><span> (必須)</span>
     <%= f.text_field :email, class: "form-control" %>
 
-    <%= f.label :password %>
+    <%= f.label :password %><span> (必須)</span>
     <%= f.password_field :password, class: "form-control" %>
 
-    <%= f.label :password_confirmation %>
+    <%= f.label :password_confirmation %><span> (必須)</span>
     <%= f.password_field :password_confirmation, class: "form-control" %>
 
     <%= f.submit "新規登録", class:"btn btn-primary" %>

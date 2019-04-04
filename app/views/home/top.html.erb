@@ -17,6 +17,11 @@
     <div class="container top_background">
       <%= link_to '新規登録する', "/signup", class:"btn btn-lg btn-primary center-block",id:"signup-btn"%>
       <%= link_to 'ログイン', "/login",class:"btn btn-lg center-block btn-info",id:"signin-btn"%>
+      <%= form_for(@user, url:login_path) do |f| %>
+        <%= f.hidden_field :email, value: "test@example.com" %>
+        <%= f.hidden_field :password, value: "password" %>
+        <%= f.submit "一発ログイン！", class:"btn btn-lg center-block btn-success"%>
+      <% end %>
     </div>
   <% end %>
 </main>

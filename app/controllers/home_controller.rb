@@ -2,7 +2,7 @@ class HomeController < ApplicationController
   include SessionsHelper
   
   def top
-    @user=current_user
+    current_user.nil? ? @user=User.new : @user=current_user
   end
 
   def about
