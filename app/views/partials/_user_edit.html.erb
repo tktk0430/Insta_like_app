@@ -27,7 +27,12 @@
     <%= f.label :tel %>
     <%= f.text_field :tel, class: 'form-control' %>
 
-    <%= link_to 'パスワードの変更', :edit_password %>
+    <% if current_user.email=="test@example.com" %>
+      <p>テストユーザーはパスワードを変更できません</p>
+      <p>テストユーザーはメールアドレスを変更できません</p>
+    <% else %>
+      <%= link_to 'パスワードの変更', :edit_password %>
+    <% end %>
     <br><br>
 
     <%= f.submit class: "btn btn-primary btn-block"%>
