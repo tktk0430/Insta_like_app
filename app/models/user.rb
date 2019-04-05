@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_secure_password
+  has_many :microposts, dependent: :destroy
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, length: {maximum: 200},
     format: {with: VALID_EMAIL_REGEX},

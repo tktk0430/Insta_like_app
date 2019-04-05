@@ -5,13 +5,14 @@ Rails.application.routes.draw do
   resources :users do
     get 'search', on: :collection
   end
-  
   get 'signup', to: 'users#new'
 
-  resources :sessions
+  resources :sessions, only: [:new,:create, :destroy]
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
 
-  resource :password
+  resource :password, only: [:edit,:update]
+
+  resources :microposts
 end
