@@ -26,4 +26,8 @@ class UserLoginTest < ActionDispatch::IntegrationTest
     assert_not is_logged_in?
     assert_redirected_to root_url
   end
+
+  test "一発ログインの確認" do
+    #このクラス(.ippatsu-loginとか)のボタンを押す！みたいなメソッドないですかね？
+  end
 end
