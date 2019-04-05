@@ -11,6 +11,13 @@ class UserUpdateTest < ActionDispatch::IntegrationTest
     login_as(@tom)
     get edit_user_path(@tom)
     assert_template "users/edit"
+    assert_select "label[for=?]", "user_name"
+    assert_select "label[for=?]", "user_account"
+    assert_select "label[for=?]", "user_introduction"
+    assert_select "label[for=?]", "user_sex"
+    assert_select "label[for=?]", "user_web"
+    assert_select "label[for=?]", "user_tel"
+    assert_select "a[href=?]", edit_password_path
     patch user_path(@tom), params:{user:{name:"",
                                         account: "",
                                         introduction: "test",
