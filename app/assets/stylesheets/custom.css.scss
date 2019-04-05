@@ -100,6 +100,13 @@ main{
   }
 }
 
+footer{
+  border-top: 0.5px solid #fff;
+  margin-top: 5px;
+  .btn{
+    padding:10px 0;
+  }
+}
 .session-maker{
   .btn{
     width: 100px;
