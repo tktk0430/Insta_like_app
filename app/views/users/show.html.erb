@@ -6,10 +6,10 @@
       <%= render 'partials/user_profile' %>
     </div>
     <div class="user-contents col-md-8">
-      <div class="user-posts">
-        <h2>投稿画像</h2>
-        <p>user.posts</p>
-      </div>
+      <h2>投稿画像</h2>
+      <ul class="user-posts">
+        <%= render @microposts %>
+      </ul>
       <div class="user-posts">
         <h2>人気の画像</h2>
         <p>user.popular_posts</p>

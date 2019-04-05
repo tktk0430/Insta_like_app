@@ -1,0 +1,9 @@
+<footer>
+  <div class="container">
+    <% if login? %>
+      <%= link_to '画像を投稿する', new_micropost_path, class:"btn btn-success btn-block"%>
+    <% else %>
+      <h4><%= link_to '見て頂いた方へ（このサイトについて）', about_path %></h4>
+    <% end %>
+  </div>
+</footer>
