@@ -213,7 +213,7 @@ footer{
 .user-posts{
   min-height: 300px;
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: 33.33% 33.33% 33.33%;
   grid-row-gap: 3px;
   grid-column-gap: 3px;
   .part{
