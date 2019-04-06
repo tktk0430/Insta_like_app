@@ -1,5 +1,8 @@
 class MicropostsController < ApplicationController
   before_action :login_user?
+  def index
+    redirect_to new_micropost_path
+  end
 
   def new
     @micropost=current_user.microposts.build
@@ -17,6 +20,6 @@ class MicropostsController < ApplicationController
 
   private
     def micropost_params
-      params.require(:micropost).permit(:content)
+      params.require(:micropost).permit(:content,:image)
     end
 end

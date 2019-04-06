@@ -2,6 +2,7 @@ ja:
   activerecord:
     models:
       user: ユーザ
+      micropost: 投稿
     attributes:
       user:
         email: メールアドレス
@@ -19,6 +20,9 @@ ja:
         password_confirmation: パスワード（確認用）
         password_digest: パスワード
         current_password: 現在のパスワード
+      micropost:
+        content: 本文
+        image_data: 画像
     errors:
       messages:
         wrong: が正しくありません

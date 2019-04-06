@@ -39,6 +39,10 @@
     <%= link_to 'キャンセル', user_path(@user), class:"btn btn-default btn-block" %>
   <% end %>
   <hr>
-  <br>
-  <%= link_to '退会する', user_path(@user), method: :delete, data:{confirm: "本当に退会しますか"}, class:"btn btn-danger btn-block" %>
+  <% if current_user.email=="test@example.com" %>
+    <p>テストユーザーは退会できません</p>
+  <% else %>
+    <br>
+    <%= link_to '退会する', user_path(@user), method: :delete, data:{confirm: "本当に退会しますか"}, class:"btn btn-danger btn-block" %>
+  <% end %>
 </div>

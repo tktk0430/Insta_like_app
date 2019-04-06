@@ -2,6 +2,10 @@
   <%= form_for @micropost do |f| %>
     <%= render 'partials/errors', obj:f.object %>
 
+    <%= f.label :image_data %>
+    <%= f.hidden_field :image, value:@micropost.cached_image_data %>
+    <%= f.file_field :image %>
+    <br>
     <%= f.label :content %>
     <%= f.text_area :content, class: 'form-control' %>
 
