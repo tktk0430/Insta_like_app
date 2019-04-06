@@ -1,0 +1,11 @@
+<div class="left-side-content">
+  <%= form_for @micropost do |f| %>
+    <%= render 'partials/errors', obj:f.object %>
+
+    <%= f.label :content %>
+    <%= f.text_area :content, class: 'form-control' %>
+
+    <%= f.submit class: "btn btn-primary btn-block"%>
+    <%= link_to 'キャンセル', user_path(current_user), class:"btn btn-default btn-block" %>
+  <% end %>
+</div>
