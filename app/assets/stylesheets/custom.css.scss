@@ -154,6 +154,7 @@ footer{
 }
 
 .left-side-content{
+  margin-top: 10px;
   position: relative;
   border-radius: 10px;
   padding: 20px 20px 10px;
@@ -216,9 +217,44 @@ footer{
   grid-template-columns: 33.33% 33.33% 33.33%;
   grid-row-gap: 3px;
   grid-column-gap: 3px;
-  .part{
-    height: 150px;
-    background-color:var(--content_background_color);
-    padding: 15px;
+}
+
+.img-container-small{
+  position: relative;
+  height: 150px;
+  img{
+    max-width: 100%;
+    width: auto;
+    max-height: 100%;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 }
+
+.micropost-show{
+  background-color: var(--content_background_color);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.micropost-content{
+  min-height: 300px;
+}
+.img-container-large{
+  position: relative;
+  height: 500px;
+  img{
+    max-width: 100%;
+    width: auto;
+    max-height: 100%;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+

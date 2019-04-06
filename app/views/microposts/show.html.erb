@@ -1,0 +1,23 @@
+<div class="container micropost-show">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="img-container-large">
+        <%= image_tag @micropost.image_url if @micropost.image_url.presence %>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="micropost-content">
+        <%= @micropost.content %>
+      </div>
+      <div class="micropost-comments">
+        <p>@micropost.comments.content</p>
+        <p>@micropost.comments.poster</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <% if correct_user %>
+    <%= link_to '投稿を取り消す', @micropost, method: :delete, data:{confirm: "本当に取り消しますか"}, class:"btn btn-danger" %>
+  <% end %>
+</div>

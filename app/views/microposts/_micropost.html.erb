@@ -1,4 +1,5 @@
-<li class="part">
-  <%= image_tag micropost.image_url if micropost.image_url.presence %>
-  <%= micropost.content&.truncate(60) %>
-</li>
+<%= link_to micropost do %>
+  <li class="img-container-small">
+    <%= image_tag micropost.image_url if micropost.image_url.presence %>
+  </li>
+<% end %>

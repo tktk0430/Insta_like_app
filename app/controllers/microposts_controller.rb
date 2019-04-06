@@ -4,6 +4,11 @@ class MicropostsController < ApplicationController
     redirect_to new_micropost_path
   end
 
+  def show
+    @micropost=Micropost.find(params[:id])
+    @user=@micropost.user
+  end
+
   def new
     @micropost=current_user.microposts.build
   end
@@ -16,6 +21,13 @@ class MicropostsController < ApplicationController
     else
       render 'new'
     end
+  end
+
+  def destroy
+    micropost=Micropost.find(params[:id])
+    micropost.destroy
+    flash[:info]="投稿を取り消しました"
+    redirect_to micropost.user
   end
 
   private
