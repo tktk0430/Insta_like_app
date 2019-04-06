@@ -50,6 +50,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog', '1.40.0'
 gem 'shrine'
+gem 'image_processing'
 gem 'mini_magick'
 
 group :development, :test do

@@ -23,6 +23,7 @@ ja:
       micropost:
         content: 本文
         image_data: 画像
+        image: 画像
     errors:
       messages:
         wrong: が正しくありません

@@ -1,9 +1,37 @@
+require "image_processing/mini_magick"
+
 class ImageUploader < Shrine
   plugin :validation_helpers
+  plugin :processing # allows hooking into promoting
+  plugin :versions   # enable Shrine to handle a hash of files
+  plugin :delete_raw # delete processed files after uploading
 
   Attacher.validate do
-    validate_max_size 5*1024*1024, message: "5MB以下の画像のみ投稿できます"
+    validate_max_size 5*1024*1024, message: "は5MB以下でないと投稿できません"
     #validate_mime_type_inclusion %w[image/jpeg image/png]
-    validate_extension_inclusion %w[jpg jpeg png], message: "画像はjpgかpngのみ投稿できます"
+    validate_extension_inclusion %w[jpg jpeg png], message: "はjpgかpngのみ投稿できます"
   end
+
+  process(:store) do |io, context|
+    versions = { original: io } # retain original
+
+    io.download do |original|
+      pipeline = ImageProcessing::MiniMagick.source(original)
+
+      versions[:large]  = pipeline.resize_to_limit!(800, 800)
+      versions[:medium] = pipeline.resize_to_limit!(500, 500)
+      versions[:small]  = pipeline.resize_to_limit!(300, 300)
+    end
+
+    versions # return the hash of processed files
+  end
+end
+
+def create_square_image(magick, size)
+  narrow = magick[:width] > magick[:height] ? magick[:height] : magick[:width]
+  magick.combine_options do |c|
+   c.gravity "center"
+   c.crop "#{narrow}x#{narrow}+0+0"
+  end
+  magick.resize "#{size}x#{size}"
 end

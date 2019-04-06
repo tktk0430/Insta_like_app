@@ -1,5 +1,6 @@
-<%= link_to micropost do %>
-  <li class="img-container-small">
-    <%= image_tag micropost.image_url if micropost.image_url.presence %>
-  </li>
-<% end %>
+<li class="thumbs">
+  <%= link_to micropost do %>
+    <%= image_tag micropost.image[:small].url %>
+  <% end %>
+</li>
+

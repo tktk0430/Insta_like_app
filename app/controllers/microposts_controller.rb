@@ -6,7 +6,7 @@ class MicropostsController < ApplicationController
 
   def show
     @micropost=Micropost.find(params[:id])
-    @user=@micropost.user
+    @user=@micropost.contributer
   end
 
   def new
@@ -27,7 +27,7 @@ class MicropostsController < ApplicationController
     micropost=Micropost.find(params[:id])
     micropost.destroy
     flash[:info]="投稿を取り消しました"
-    redirect_to micropost.user
+    redirect_to micropost.contributer
   end
 
   private
