@@ -14,7 +14,6 @@ class ImageUploader < Shrine
 
   process(:store) do |io, context|
     versions = { original: io } # retain original
-
     io.download do |original|
       pipeline = ImageProcessing::MiniMagick.source(original)
 
@@ -25,13 +24,4 @@ class ImageUploader < Shrine
 
     versions # return the hash of processed files
   end
-end
-
-def create_square_image(magick, size)
-  narrow = magick[:width] > magick[:height] ? magick[:height] : magick[:width]
-  magick.combine_options do |c|
-   c.gravity "center"
-   c.crop "#{narrow}x#{narrow}+0+0"
-  end
-  magick.resize "#{size}x#{size}"
 end

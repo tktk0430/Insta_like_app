@@ -5,7 +5,7 @@
     <%= f.label :name %>
     <%= f.text_field :name, class: 'form-control' %>
 
-    <%= f.label :account%>
+    <%= f.label :account %>
     <%= f.text_field :account, class: 'form-control' %>
 
     <div class="sex-form">
@@ -31,6 +31,9 @@
       <p>テストユーザーはパスワードを変更できません</p>
       <p>テストユーザーはメールアドレスを変更できません</p>
     <% else %>
+      <%= f.label :email %>
+      <%= f.text_field :email, class: 'form-control' %>
+      
       <%= link_to 'パスワードの変更', :edit_password %>
     <% end %>
     <br><br>

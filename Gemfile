@@ -24,16 +24,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
 
-# Use ActiveStorage variant
-# gem 'mini_magick', '~> 4.8'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
-
-# Reduces boot times through caching; required in config/boot.rb
 gem 'bcrypt', '~> 3.1.7'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'email_validator', '~> 1.6'
@@ -46,12 +37,13 @@ gem 'faker'
 gem 'yoshida'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
-gem 'carrierwave'
+#gem 'carrierwave'
 gem 'mini_magick'
-gem 'fog', '1.40.0'
-gem 'shrine'
-gem 'image_processing'
-gem 'mini_magick'
+#gem 'fog', '1.40.0'
+gem 'shrine', '~> 2.11'
+gem 'shrine-memory'
+gem 'image_processing', '~>1.0'
+gem "aws-sdk-s3", "~> 1.2"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -65,6 +57,7 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'pry-doc'
+  gem 'dotenv-rails'
 end
 
 group :development do

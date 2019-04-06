@@ -73,11 +73,20 @@ h1, h2, h3, h4, h5, h6, p {
 body {
   background-color: black;
   color:white;
+  height: 100%;
+  position: relative;
 }
 
 header{
+  background-color: black;
   border-bottom: 0.5px solid var(--content_background_color);
   margin-bottom: 5px;
+  transition: 0.3s;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  z-index:24;
   #logo{
     float: left;
     font-weight: bold;
@@ -90,7 +99,31 @@ header{
   }
 }
 
+
 main{
+  padding-top: 70px;
+  min-height: 100vh;
+}
+
+footer{
+  border-top: 0.5px solid var(--content_background_color);
+  background-color: black;
+  margin-top: 5px;
+  transition: 0.3s;
+  .btn{
+    padding:10px 0;
+    margin:10px 0;
+  }
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+footer.hide{
+  // transform: translateY(100%);
+  opacity: 0;
+}
+
+.root-page{
   .btn{
     width: 300px;
     margin: 10px auto 0px;
@@ -100,13 +133,8 @@ main{
   }
 }
 
-footer{
-  border-top: 0.5px solid var(--content_background_color);
-  margin-top: 5px;
-  .btn{
-    padding:10px 0;
-  }
-}
+
+
 .session-maker{
   .btn{
     width: 100px;

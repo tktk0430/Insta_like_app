@@ -1,0 +1,14 @@
+first:
+  contributer: tom
+  content: "hogehoge"
+  image_data: "{\"original\":{\"id\":\"0bd7aaba1f7ddc01c28f669c5e79e10d.jpg\",\"storage\":\"store\",\"metadata\":{\"filename\":\"tapir.jpg\",\"size\":992,\"mime_type\":\"image/jpeg\"}},\"large\":{\"id\":\"8f454836470f3beafb30ce0bdb580b96.jpg\",\"storage\":\"store\",\"metadata\":{\"filename\":\"image_processing20190407-16091-1gum860.jpg\",\"size\":2113,\"mime_type\":null}},\"medium\":{\"id\":\"1f6a73faff93f806b9a86ae012392481.jpg\",\"storage\":\"store\",\"metadata\":{\"filename\":\"image_processing20190407-16091-bs4yex.jpg\",\"size\":2113,\"mime_type\":null}},\"small\":{\"id\":\"c4659c45fcf9373f117ac41e1152187a.jpg\",\"storage\":\"store\",\"metadata\":{\"filename\":\"image_processing20190407-16091-blokxa.jpg\",\"size\":2113,\"mime_type\":null}}}"
+
+second:
+  contributer: bob
+  content: "hogefuga"
+  image_data: "{\"original\":{\"id\":\"0bd7aaba1f7ddc01c28f669c5e79e10d.jpg\",\"storage\":\"store\",\"metadata\":{\"filename\":\"tapir.jpg\",\"size\":992,\"mime_type\":\"image/jpeg\"}},\"large\":{\"id\":\"8f454836470f3beafb30ce0bdb580b96.jpg\",\"storage\":\"store\",\"metadata\":{\"filename\":\"image_processing20190407-16091-1gum860.jpg\",\"size\":2113,\"mime_type\":null}},\"medium\":{\"id\":\"1f6a73faff93f806b9a86ae012392481.jpg\",\"storage\":\"store\",\"metadata\":{\"filename\":\"image_processing20190407-16091-bs4yex.jpg\",\"size\":2113,\"mime_type\":null}},\"small\":{\"id\":\"c4659c45fcf9373f117ac41e1152187a.jpg\",\"storage\":\"store\",\"metadata\":{\"filename\":\"image_processing20190407-16091-blokxa.jpg\",\"size\":2113,\"mime_type\":null}}}"
+
+third:
+  contributer: bob
+  content: "foobar"
+  image_data: "{\"original\":{\"id\":\"0bd7aaba1f7ddc01c28f669c5e79e10d.jpg\",\"storage\":\"store\",\"metadata\":{\"filename\":\"tapir.jpg\",\"size\":992,\"mime_type\":\"image/jpeg\"}},\"large\":{\"id\":\"8f454836470f3beafb30ce0bdb580b96.jpg\",\"storage\":\"store\",\"metadata\":{\"filename\":\"image_processing20190407-16091-1gum860.jpg\",\"size\":2113,\"mime_type\":null}},\"medium\":{\"id\":\"1f6a73faff93f806b9a86ae012392481.jpg\",\"storage\":\"store\",\"metadata\":{\"filename\":\"image_processing20190407-16091-bs4yex.jpg\",\"size\":2113,\"mime_type\":null}},\"small\":{\"id\":\"c4659c45fcf9373f117ac41e1152187a.jpg\",\"storage\":\"store\",\"metadata\":{\"filename\":\"image_processing20190407-16091-blokxa.jpg\",\"size\":2113,\"mime_type\":null}}}"

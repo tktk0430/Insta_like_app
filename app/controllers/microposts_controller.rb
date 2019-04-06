@@ -1,5 +1,7 @@
 class MicropostsController < ApplicationController
   before_action :login_user?
+  before_action :correct_user, only: :destroy
+
   def index
     redirect_to new_micropost_path
   end
@@ -33,5 +35,14 @@ class MicropostsController < ApplicationController
   private
     def micropost_params
       params.require(:micropost).permit(:content,:image)
+    end
+
+    def correct_user
+      micropost=Micropost.find(params[:id])
+      contributer=micropost.contributer
+      unless current_user==contributer
+        session[:danger] = "このページにはアクセスできません"
+        redirect_to root_url
+      end
     end
 end
