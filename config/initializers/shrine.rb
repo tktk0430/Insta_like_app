@@ -26,3 +26,4 @@ Shrine.plugin :activerecord
 Shrine.plugin :cached_attachment_data
 Shrine.plugin :remove_invalid
 Shrine.plugin :validation_helpers
+Shrine.plugin :determine_mime_type
