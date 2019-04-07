@@ -27,3 +27,4 @@ ja:
     errors:
       messages:
         wrong: が正しくありません
+        cannot_follow_self: は自信をフォローできません

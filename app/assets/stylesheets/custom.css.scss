@@ -85,7 +85,6 @@ header{
   position:fixed;
   top:0;
   left:0;
-  width:100%;
   z-index:24;
   #logo{
     float: left;
@@ -97,6 +96,7 @@ header{
     margin-top: 10px;
     font-size: 1.2em;
   }
+  width: 100%;
 }
 
 

@@ -4,7 +4,7 @@
 
     <%= f.label :image_data %>
     <%= f.hidden_field :image, value:@micropost.cached_image_data %>
-    <%= f.file_field :image %>
+    <%= f.file_field :image, accept: 'image/jpeg,image/png'%>
     <br>
     <%= f.label :content %>
     <%= f.text_area :content, class: 'form-control' %>
