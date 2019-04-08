@@ -13,8 +13,8 @@
   <i class="fa fa-home fa-lg"></i> : <a href="<%= @user.web %>" target="_blank"><%= @user.web&.truncate(30) %></a>
   <hr>
   <div class="assets">
-    <%= link_to 'フォロー', '#' %>
-    <%= link_to 'フォロワー', '#' %>
+    <%= link_to "フォロー #{@user.following.count}", following_user_path(@user) %>
+    <%= link_to "フォロワー #{@user.followers.count}", followers_user_path(@user) %>
     <%= link_to "画像投稿  #{@user.microposts.count}", @user %>
     <%= link_to 'いいね', '#' %>
   </div>

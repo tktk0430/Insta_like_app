@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   get 'about', to: 'home#about'
 
   resources :users do
+    member do
+      get :following, :followers
+    end
     get 'search', on: :collection
   end
   get 'signup', to: 'users#new'

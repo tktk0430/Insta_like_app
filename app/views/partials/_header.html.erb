@@ -5,16 +5,16 @@
         <%= logo %>
       </div>
       <div class="col-md-7">
-        <nav>
-          <ul class="nav nav-pills">
-            <% if login? %>
+        <% if login? %>
+          <nav>
+            <ul class="nav nav-pills">
               <li><%= link_to 'マイページ', user_path(current_user) %></li>
               <li><%= link_to '通知', '#' %></li>
               <li><%= link_to 'ユーザ一覧', users_path %></li>
               <li><%= link_to 'ログアウト', logout_path, method: :delete %></li>
-            <% end %>
-          </ul>
-        </nav>
+            </ul>
+          </nav>
+        <% end %>
       </div>
     </div>
   </div>

@@ -13,7 +13,7 @@ class User < ApplicationRecord
   validates :email, presence: true
   validates :name,presence: true, length: {maximum: 20}
   validates :account, presence: true, uniqueness: true, length: {maximum: 20}
-  validates :introduction, length: {maximum: 140}
+  validates :introduction, length: {maximum: 180}
   validates :password,length:{minimum: 6}, allow_nil: true
   validates :web, length: {maximum: 200}
 

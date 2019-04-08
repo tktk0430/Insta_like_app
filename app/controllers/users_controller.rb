@@ -5,6 +5,8 @@ class UsersController < ApplicationController
 
   def index
     @users=User.page(params[:page]).per(10)
+    @user=current_user
+    @page_title="ユーザー一覧"
   end
 
   def show
@@ -46,6 +48,22 @@ class UsersController < ApplicationController
     user.destroy
     flash[:info] = "退会しました"
     redirect_to root_path
+  end
+
+  def following
+    @user=User.find(params[:id])
+
+    @users=@user.following.page(params[:page]).per(10)
+    
+    @page_title="フォロー"
+    render 'users/index'
+  end
+
+  def followers
+    @user=User.find(params[:id])
+    @users=@user.followers.page(params[:page]).per(10)
+    @page_title="フォロワー"
+    render 'users/index'
   end
 
   private

@@ -4,14 +4,19 @@
       <div class="img-container-large">
         <%= image_tag @micropost&.image[:large].url %>
       </div>
+      <div class="micropost-created-at pull-right">
+        <%= time_ago_in_words(@micropost.created_at) %>前
+      </div>
     </div>
     <div class="col-md-6">
-      <div class="micropost-content">
-        <%= @micropost.content %>
-      </div>
-      <div class="micropost-comments">
-        <p>@micropost.comments.content</p>
-        <p>@micropost.comments.poster</p>
+      <div class="micropost-sentences">
+        <div class="micropost-content">
+          <%= @micropost.content %>
+        </div>
+        <div class="micropost-comments">
+          <p>@micropost.comments.content</p>
+          <p>@micropost.comments.poster</p>
+        </div>
       </div>
     </div>
   </div>

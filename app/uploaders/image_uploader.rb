@@ -4,7 +4,7 @@ class ImageUploader < Shrine
   plugin :validation_helpers
   plugin :processing # allows hooking into promoting
   plugin :versions   # enable Shrine to handle a hash of files
-  plugin :delete_raw # delete processed files after uploading
+  plugin :delete_raw, storages: [:store] # delete processed files after uploading
 
   Attacher.validate do
     validate_max_size 5*1024*1024, message: "は5MB以下でないと投稿できません"
