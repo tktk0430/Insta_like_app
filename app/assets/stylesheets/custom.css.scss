@@ -4,11 +4,6 @@
 
 @import url(ress/ress.css);
 
-@media screen and (max-width: 991px){
-  .none {display:none};
-  .thumbs {background-color: red;};
-}
-
 .fa-home{
   padding: 0;
 }
@@ -52,7 +47,6 @@ a:hover {
   text-decoration: none;
 }
 .btn{
-  margin: 10px 0;
 }
 h1, h2, h3, h4, h5, h6, p {
   margin: 0;
@@ -93,16 +87,22 @@ header{
     font-size: 1.9em;
     line-height: 60px;
   }
-  nav{
+  .nav{
     margin-top: 10px;
-    font-size: 1.2em;
+    li{
+      width:24%;
+      text-align: center;
+      a{
+        font-size: 16px;
+      }
+    }
   }
   width: 100%;
 }
 
 
 main{
-  padding-top: 70px;
+  margin-top: 63px;
   min-height: 100vh;
 }
 
@@ -115,9 +115,25 @@ footer{
     padding:10px 0;
     margin:10px 0;
   }
+  
   position: fixed;
   bottom: 0;
   width: 100%;
+}
+.footer-layout{
+  display: grid;
+  grid-template-columns: 30% 70%;
+  grid-template-rows: auto;
+  grid-column-gap: 5px;
+  a{
+    display: flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .btn-primary{
+    height: 42px;
+    margin-top: 10px;
+  }
 }
 footer.hide{
   // transform: translateY(100%);
@@ -250,7 +266,7 @@ footer.hide{
 
 .thumbs{
   position: relative;
-  height: 150px;
+  height: 200px;
   background-color: var(--content_background_color);
   img{
     max-width: 100%;
@@ -291,3 +307,19 @@ footer.hide{
   }
 }
 
+@media screen and (max-width: 991px){
+  .none {display:none};
+  .thumbs {height: 23vw;};
+  .nav{
+    li{
+      a{
+        padding:5px 4px;
+        font-size: 12px!important;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 991px){
+  .none-when-large-window {display:none;}
+}

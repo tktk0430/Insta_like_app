@@ -1,5 +1,5 @@
 <div class="user-view clearfix ">
   <%= link_to gravatar_for(user), user_path(user) %>
   <h4><%= link_to user.name, user_path(user) %></h4>
-  <p><%= user.introduction&.truncate(50) %></p>
+  <p><%= user.introduction&.truncate(30) %></p>
 </div>
