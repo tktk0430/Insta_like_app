@@ -21,11 +21,11 @@
   }
 }
 .pagination{
+  margin-top: 0;
   display: block;
   text-align: center;
   font-size: 15px;
   letter-spacing: 5px;
-  margin: 10px auto;
   .current{
     color: yellow;
   }
@@ -113,11 +113,6 @@ footer{
   background-color: black;
   margin-top: 5px;
   transition: 0.3s;
-  .btn{
-    padding:10px 0;
-    margin:10px 0;
-  }
-  
   position: fixed;
   bottom: 0;
   width: 100%;
@@ -126,20 +121,14 @@ footer{
   display: grid;
   grid-template-columns: 30% 70%;
   grid-template-rows: auto;
-  grid-column-gap: 5px;
+  grid-column-gap: 10px;
   a{
     display: flex;
     align-items:center;
     justify-content:center;
+    padding-top: 7px;
+    padding-bottom: 7px;
   }
-  .btn-primary{
-    height: 42px;
-    margin-top: 10px;
-  }
-}
-footer.hide{
-  // transform: translateY(100%);
-  opacity: 0;
 }
 
 .root-page{
@@ -201,10 +190,10 @@ footer.hide{
 }
 
 .left-side-content{
-  margin-top: 10px;
   position: relative;
   border-radius: 10px;
   padding: 20px 20px 10px;
+  margin-bottom: 5px;
   background-color: var(--content_background_color);
   .top-right-icon{
     position: absolute;

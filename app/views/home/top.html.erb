@@ -6,10 +6,10 @@
           <%= render 'partials/user_profile' %>
         </div>
         <div class="user-contents col-md-8">
-          <h2>他のユーザーの投稿画像</h2>
-          <div class="user-posts">
-            <p>user.follower.posts</p>
-          </div>
+          <ul class="user-posts">
+            <%= render @microposts %>
+          </ul>
+          <%= paginate @microposts %>
         </div>
       </div>
     </div>

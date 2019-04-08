@@ -2,7 +2,7 @@
   <div class="container">
     <% if login? %>
       <div class="footer-layout">
-        <%= link_to 'ホーム', root_path, class:"btn btn-block"%>
+        <%= link_to 'ホーム', root_path, class:"btn btn-default btn-block"%>
         <% unless params[:controller]=="microposts"&&params[:action]=="new" %>
           <%= link_to '新規投稿', new_micropost_path, class:"btn btn-primary btn-block"%>
         <% end %>
