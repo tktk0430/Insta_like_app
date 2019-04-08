@@ -308,7 +308,6 @@ DEPENDENCIES
   better_errors
   bootsnap (>= 1.1.0)
   bootstrap-sass
-  byebug
   coffee-rails
   dotenv-rails
   email_validator (~> 1.6)

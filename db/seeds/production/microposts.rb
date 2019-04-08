@@ -1,11 +1,11 @@
-Micropost.create(
-  content: "テストコンテンツ",
-  user_id: 1
-)
+image_num_array=[*1..62].shuffle!
 
-100.times do |i|
-  Micropost.create(
-    content: Yoshida::Text.sentence,
-    user_id:i%12+1
-  )
+User.all.each do |user|
+  5.times do |i|
+    image_num=image_num_array.shift
+    user.microposts.create(
+      content: Yoshida::Text.sentence,
+      image: File.open("#{Rails.root}/db/image_seeds/#{image_num}.jpg")
+    )
+  end
 end
