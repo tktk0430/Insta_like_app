@@ -101,13 +101,13 @@ header{
 
 main{
   margin-top: 63px;
+  margin-bottom: 63px;
   min-height: 100vh;
 }
 
 footer{
   border-top: 1px solid var(--content_background_color);
   background-color: black;
-  margin-top: 5px;
   transition: 0.3s;
   position: fixed;
   bottom: 0;
