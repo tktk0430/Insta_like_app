@@ -44,9 +44,7 @@ hr{
 .alert{
   margin-bottom: 5px;
 }
-a:hover {
-  text-decoration: none;
-}
+
 .btn{
   margin:5px 0;
 }
@@ -74,6 +72,7 @@ h1, h2, h3, h4, h5, h6, p {
   font-weight: bold;
   font-size: 1.9em;
   line-height: 53px;
+  text-decoration: none;
 }
 
 body {
@@ -255,18 +254,18 @@ footer{
 .micropost-show{
   background-color: var(--content_background_color);
   border-radius: 10px;
+  padding: 10px;
 }
 .delete-post{
   text-align: right;
   padding: 0;
 }
-.micropost-sentences{
-  padding:30px;
-}
+
 
 .img-container-large{
   position: relative;
   height: 400px;
+  overflow:hidden;
   img{
     max-width: 100%;
     width: auto;

@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root 'home#top'
   get 'about', to: 'home#about'
+  get 'policy', to: 'home#policy'
 
   resources :users do
     member do

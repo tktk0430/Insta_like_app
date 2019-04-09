@@ -75,13 +75,16 @@ class UsersController < ApplicationController
   end
 
   private
-    def user_params
-      params.require(:user).permit(
-        :name, :email, :account, :email, :sex, :introduction, :web, :tel, :password, :password_confirmation
-      )
-    end
-
     def set_default_name
       params[:user][:name]="名無しさん" if params[:user][:name].nil? || params[:user][:name].empty?
+    end
+
+    def user_params
+      if current_user&.account=="tester"
+        params.require(:user).permit(:name, :account, :sex, :introduction, :web, :tel)
+      else
+        params.require(:user).permit(
+        :name, :email, :account, :sex, :introduction, :web, :tel, :password, :password_confirmation)
+      end
     end
 end
