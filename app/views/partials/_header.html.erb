@@ -4,16 +4,14 @@
       <div class="col-md-5">
         <%= logo %>
       </div>
-      <div class="col-md-7">
+      <div class="col-md-7 header-nav">
         <% if login? %>
-          <nav>
-            <ul class="nav nav-pills">
-              <li><%= link_to 'マイページ', user_path(current_user) %></li>
-              <li><%= link_to '通知', '#' %></li>
-              <li><%= link_to 'ユーザ一覧', users_path %></li>
-              <li><%= link_to 'ログアウト', logout_path, method: :delete %></li>
-            </ul>
-          </nav>
+          <ul class="nav">
+            <li><%= link_to 'マイページ', user_path(current_user), class:"btn" %></li>
+            <li><%= link_to '通知', '#', class:"btn"  %></li>
+            <li><%= link_to 'ユーザ一覧', users_path, class:"btn"  %></li>
+            <li><%= link_to 'ログアウト', logout_path, method: :delete, class:"btn"  %></li>
+          </ul>
         <% end %>
       </div>
     </div>

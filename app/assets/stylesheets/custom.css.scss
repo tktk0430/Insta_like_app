@@ -67,6 +67,12 @@ h1, h2, h3, h4, h5, h6, p {
   margin-bottom: 15px;
 }
 
+#logo{
+  font-weight: bold;
+  font-size: 1.9em;
+  line-height: 53px;
+}
+
 body {
   background-color: black;
   color:white;
@@ -75,31 +81,19 @@ body {
 }
 
 header{
+  border-bottom: 1px solid var(--content_background_color);
   background-color: black;
-  border-bottom: 0.5px solid var(--content_background_color);
   margin-bottom: 5px;
   transition: 0.3s;
   position:fixed;
   top:0;
   left:0;
   z-index:24;
-  #logo{
-    float: left;
-    font-weight: bold;
-    font-size: 1.9em;
-    line-height: 60px;
-  }
-  .nav{
-    margin-top: 10px;
-    li{
-      width:24%;
-      text-align: center;
-      a{
-        font-size: 16px;
-      }
-    }
-  }
   width: 100%;
+  ul{
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
 
@@ -109,7 +103,7 @@ main{
 }
 
 footer{
-  border-top: 0.5px solid var(--content_background_color);
+  border-top: 1px solid var(--content_background_color);
   background-color: black;
   margin-top: 5px;
   transition: 0.3s;
@@ -118,16 +112,10 @@ footer{
   width: 100%;
 }
 .footer-layout{
-  display: grid;
-  grid-template-columns: 30% 70%;
-  grid-template-rows: auto;
-  grid-column-gap: 10px;
+  display: flex;
+  justify-content: space-between;
   a{
-    display: flex;
-    align-items:center;
-    justify-content:center;
-    padding-top: 7px;
-    padding-bottom: 7px;
+    margin: 5px;
   }
 }
 
@@ -291,19 +279,11 @@ footer{
   }
 }
 
+.none-when-wide {display:none;}
+
 @media screen and (max-width: 991px){
   .none {display:none};
   .thumbs {height: 23vw;};
-  .nav{
-    li{
-      a{
-        padding:5px 4px;
-        font-size: 12px!important;
-      }
-    }
-  }
-}
-
-@media screen and (min-width: 991px){
-  
+  .none-when-wide {display:block;}
+  .header-nav {padding:0;}
 }
