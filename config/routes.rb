@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   resources :users do
     member do
-      get :following, :followers
+      get :following, :followers, :like_posts
     end
     get 'search', on: :collection
   end
@@ -16,8 +16,8 @@ Rails.application.routes.draw do
   delete 'logout', to: 'sessions#destroy'
 
   resource :password, only: [:edit,:update]
-
-  resources :microposts
-
+  
+  resources :microposts, only: [:index,:show,:new,:create,:destroy]
   resources :relationships, only: [:create, :destroy]
+  resources :likes, only: [:create, :destroy]
 end

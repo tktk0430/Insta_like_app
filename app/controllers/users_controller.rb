@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+
   before_action :set_default_name, only:[:create]
   before_action :login_user?, only:[:index,:show,:edit,:update,:destroy]
   before_action :correct_user?, only:[:edit,:update,:destroy]
@@ -64,6 +65,13 @@ class UsersController < ApplicationController
     @users=@user.followers.page(params[:page]).per(10)
     @page_title="フォロワー"
     render 'users/index'
+  end
+
+  def like_posts
+    @user=User.find(params[:id])
+    @microposts=@user.like_posts.page(params[:page]).per(12)
+    @page_title="いいね！した画像"
+    render 'microposts/index'
   end
 
   private

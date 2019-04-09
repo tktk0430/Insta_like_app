@@ -5,7 +5,9 @@ class User < ApplicationRecord
   has_many :following, through: :active_relationship, source: :followed
   has_many :passive_relationship, class_name: "Relationship", foreign_key: "followed_id"
   has_many :followers, through: :passive_relationship, source: :follower
-  
+  has_many :active_like, class_name: "Like"
+  has_many :like_posts, through: :active_like, source: :micropost
+
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, length: {maximum: 200},
     format: {with: VALID_EMAIL_REGEX},

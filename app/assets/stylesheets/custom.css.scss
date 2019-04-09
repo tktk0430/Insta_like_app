@@ -63,6 +63,9 @@ h1, h2, h3, h4, h5, h6, p {
   opacity: 0.3;
 }
 
+.sub-title{
+  margin-bottom: 10px;
+}
 .form-control{
   margin-bottom: 15px;
 }
@@ -205,7 +208,7 @@ footer{
   .assets{
     display: grid;
     grid-template-columns: auto auto;
-    grid-row: auto auto;
+    grid-row-gap: 5px;
     a{
       display: flex;
       align-items:center;
@@ -237,7 +240,6 @@ footer{
 .thumbs{
   position: relative;
   height: 200px;
-  background-color: var(--content_background_color);
   img{
     max-width: 100%;
     width: auto;
@@ -256,16 +258,15 @@ footer{
 }
 .delete-post{
   text-align: right;
+  padding: 0;
 }
 .micropost-sentences{
   padding:30px;
 }
-.micropost-content{
-  min-height: 150px;
-}
+
 .img-container-large{
   position: relative;
-  height: 500px;
+  height: 400px;
   img{
     max-width: 100%;
     width: auto;

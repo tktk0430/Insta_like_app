@@ -1,12 +1,11 @@
 class RelationshipsController < ApplicationController
+  before_action :login_user?
+  #current_userであることを確かめる必要はない。(各々のアクションでcurrent_userからのactive_relationshipを探しているため)
+
   def create
     rel=current_user.active_relationship.new(followed_id: params[:followed_id])
-    if rel.save
-      redirect_to request.referrer || root_url
-    else
-      flash[:danger]="作成できませんでした"
-      redirect_to request.referrer || root_url
-    end
+    rel.save
+    redirect_to request.referrer || root_url
   end
 
   def destroy

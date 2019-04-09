@@ -4,7 +4,7 @@
       <div class="footer-layout">
         <%= link_to 'ホーム', root_path, class:"btn btn-default btn-block none-when-wide" %>
         <% unless params[:controller]=="microposts"&&params[:action]=="new" %>
-          <%= link_to '新規投稿', new_micropost_path, class:"btn btn-primary btn-block"%>
+          <%= link_to '新規投稿', new_micropost_path, class:"btn btn-success btn-block"%>
         <% end %>
       </div>
     <% else %>
