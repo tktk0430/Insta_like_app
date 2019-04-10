@@ -7,10 +7,10 @@
       <div class="col-md-7 header-nav">
         <% if login? %>
           <ul class="nav">
-            <li><%= link_to 'マイページ', user_path(current_user), class:"btn" %></li>
-            <li><%= link_to '通知', '#', class:"btn"  %></li>
-            <li><%= link_to 'ユーザ一覧', users_path, class:"btn"  %></li>
-            <li><%= link_to 'ログアウト', logout_path, method: :delete, class:"btn"  %></li>
+            <li><%= menu_link_to 'マイページ', user_path(current_user), class:"btn" %></li>
+            <li><%= menu_link_to '通知', '#', class:"btn"  %></li>
+            <li><%= menu_link_to 'ユーザ一覧', users_path, class:"btn"  %></li>
+            <li><%= menu_link_to 'ログアウト', logout_path, method: :delete, class:"btn"  %></li>
           </ul>
         <% end %>
       </div>
