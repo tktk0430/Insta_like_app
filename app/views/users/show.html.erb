@@ -4,9 +4,17 @@
   <div class="row">
     <div class="col-md-4">
       <% unless current_user==@user %>
-        <%= follow_button %>
+      <div id="follow-button">
+        <% if following?(@user) %>
+          <%= render 'partials/follow_button' %>
+        <% else %>
+          <%= render 'partials/follow_button' %>
+        <% end %>
+      </div>
       <% end %>
-      <%= render 'partials/user_profile' %>
+      <div id="user-profile">
+        <%= render 'partials/user_profile' %>
+      </div>
     </div>
     <div class="user-contents col-md-8">
       <h4 class="sub-title"><%= "#{@user.name}の投稿" %></h4>

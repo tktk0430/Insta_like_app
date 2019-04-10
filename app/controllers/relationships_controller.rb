@@ -3,14 +3,22 @@ class RelationshipsController < ApplicationController
   #current_userであることを確かめる必要はない。(各々のアクションでcurrent_userからのactive_relationshipを探しているため)
 
   def create
-    rel=current_user.active_relationship.new(followed_id: params[:followed_id])
-    rel.save
-    redirect_to request.referrer || root_url
+    @rel=current_user.active_relationship.new(followed_id: params[:followed_id])
+    @rel.save
+    @user=User.find(params[:followed_id])
+    respond_to do |format|
+      format.html { redirect_to request.referrer }
+      format.js
+    end
   end
 
   def destroy
-    rel=current_user.active_relationship.find_by(followed_id: params[:followed_id])
+    rel=current_user.active_relationship.find(params[:id])
+    @user=User.find(rel.followed_id)
     rel.destroy
-    redirect_to request.referrer || root_url
+    respond_to do |format|
+      format.html { redirect_to request.referrer }
+      format.js
+    end
   end
 end
