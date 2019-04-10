@@ -296,3 +296,14 @@ footer{
   .none-when-wide {display:block;}
   .header-nav {padding:0;}
 }
+
+.micropost-comments{
+  min-height: 300px;
+  margin-top: 10px;
+}
+.micropost-comment{
+  word-wrap: break-word;
+}
+.comment-form-text{
+  margin-bottom: 0px;
+}

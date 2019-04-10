@@ -1,0 +1,7 @@
+<div class="micropost-comment">
+  <%= link_to "#{comment.user.name} :", comment.user %>
+  <%= comment.content %>
+  <% if current_user==comment.user %>
+    <u style="font-size:10px; font-style:oblique;"><%= link_to "削除", comment, method: :delete, data:{confirm: "本当に削除しますか？ #{comment.content}"} %></u>
+  <% end %>
+</div>

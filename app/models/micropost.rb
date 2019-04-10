@@ -5,6 +5,7 @@ class Micropost < ApplicationRecord
   belongs_to :contributer, class_name:'User', foreign_key: 'user_id'
   has_many :passive_like, class_name: "Like"
   has_many :like_users, through: :passive_like, source: :user
+  has_many :comments
   
   validates :user_id, presence: true
   validates :content, length:{maximum: 180}

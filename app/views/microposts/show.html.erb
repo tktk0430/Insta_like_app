@@ -12,13 +12,18 @@
         <%= "#{time_ago_in_words(@micropost.created_at)}前" %>
       </div>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-6 clearfix micropost-show-right">
       <%= like_button %>
-      <div class="micropost-sentences">
-        <div class="micropost-comments">
-          <p>@micropost.comments.content</p>
-          <p>@micropost.comments.poster</p>
-        </div>
+      <div class="micropost-comments">
+        <%= render @micropost.comments %>
+      </div>
+      <div class="comment-form">
+        <%= form_for (current_user.comments.build) do |f| %>
+          <%= hidden_field_tag :micropost_id, @micropost.id %>
+          <%= f.text_field :content, class:"form-control comment-form-text" %>
+          <%= f.object.errors.full_messages.first if f.object.errors.present? %>
+          <%= f.submit "コメント", class:"btn btn-primary pull-right" %>
+        <% end %>
       </div>
     </div>
   </div>

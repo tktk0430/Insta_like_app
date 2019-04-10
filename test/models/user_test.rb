@@ -69,8 +69,8 @@ class UserTest < ActiveSupport::TestCase
     assert_not @user.valid?
   end
 
-  test "introductionは180字以内" do
-    @user.introduction = "a"*181
+  test "introductionは200字以内" do
+    @user.introduction = "a"*201
     assert_not @user.valid?
   end
 

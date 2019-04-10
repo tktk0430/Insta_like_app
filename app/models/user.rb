@@ -1,12 +1,13 @@
 class User < ApplicationRecord
   has_secure_password
   has_many :microposts, dependent: :destroy
-  has_many :active_relationship, class_name: "Relationship", foreign_key: "follower_id"
+  has_many :active_relationship, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy
   has_many :following, through: :active_relationship, source: :followed
-  has_many :passive_relationship, class_name: "Relationship", foreign_key: "followed_id"
+  has_many :passive_relationship, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy
   has_many :followers, through: :passive_relationship, source: :follower
-  has_many :active_like, class_name: "Like"
+  has_many :active_like, class_name: "Like", dependent: :destroy
   has_many :like_posts, through: :active_like, source: :micropost
+  has_many :comments
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, length: {maximum: 200},
@@ -15,7 +16,7 @@ class User < ApplicationRecord
   validates :email, presence: true
   validates :name,presence: true, length: {maximum: 20}
   validates :account, presence: true, uniqueness: true, length: {maximum: 20}
-  validates :introduction, length: {maximum: 180}
+  validates :introduction, length: {maximum: 200}
   validates :password,length:{minimum: 6}, allow_nil: true
   validates :web, length: {maximum: 200}
 
