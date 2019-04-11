@@ -4,12 +4,20 @@ class LikesController < ApplicationController
   def create
     like=current_user.active_like.new(micropost_id:params[:micropost_id])
     like.save
-    redirect_to request.referrer || root_url
+    @micropost=Micropost.find(params[:micropost_id])
+    respond_to do |format|
+      format.html {redirect_to request.referrer}
+      format.js
+    end
   end
 
   def destroy
-    like=current_user.active_like.find_by(micropost_id:params[:micropost_id])
+    like=current_user.active_like.find(params[:id])
+    @micropost=like.micropost
     like.destroy
-    redirect_to request.referrer || root_url
+    respond_to do |format|
+      format.html {redirect_to request.referrer}
+      format.js
+    end
   end
 end

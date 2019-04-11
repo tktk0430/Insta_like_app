@@ -13,7 +13,9 @@
       </div>
     </div>
     <div class="col-md-6 clearfix micropost-show-right">
-      <%= like_button %>
+      <div id="like_button">
+        <%= render 'partials/like_button' %>
+      </div>
       <div class="micropost-comments">
         <%= render @micropost.comments %>
       </div>

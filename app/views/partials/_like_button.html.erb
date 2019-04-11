@@ -1,0 +1,5 @@
+<% if like?(@micropost) %>
+  <%= link_to 'いいね解除', like_path(current_user.active_like.find_by(micropost_id: @micropost.id)), method: :delete, class:"btn btn-danger btn-block", remote: true %>
+<% else %>
+  <%= link_to 'いいね', likes_path(params:{micropost_id:@micropost.id}), method: :post, class:"btn btn-primary btn-block", remote: true %>
+<% end %>
