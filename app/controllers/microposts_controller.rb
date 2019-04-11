@@ -1,6 +1,7 @@
 class MicropostsController < ApplicationController
   before_action :login_user?
   before_action :correct_user, only: :destroy
+  protect_from_forgery except: :create
 
   def index
     redirect_to new_micropost_path
@@ -8,6 +9,10 @@ class MicropostsController < ApplicationController
 
   def show
     @micropost=Micropost.find(params[:id])
+    respond_to do |format|
+      format.html { render 'microposts/_show' }
+      format.js
+    end
   end
 
   def new
