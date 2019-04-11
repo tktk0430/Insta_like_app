@@ -5,5 +5,9 @@
   <%= link_to gravatar_for(visiter), user_path(visiter) %>
   <%== notification_form(notification) %><span class="moderate-font"><%= " (#{time_ago_in_words(notification.created_at)}前)" %></span>
   <br>
-  <p class="moderate-font"><%= @comment if !@comment.nil? %></p>
+  <% if !@comment.nil? %>
+    <p class="moderate-font"><%= @comment %></p>
+    <% @comment=nil %>
+  <% end %>
+  
 </div>
