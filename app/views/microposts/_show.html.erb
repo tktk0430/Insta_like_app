@@ -30,9 +30,15 @@
       <button type="button" class="btn btn-default pull-right" data-dismiss="modal">閉じる</button>
     </div>
   </div>
+<<<<<<< HEAD
   <div class="container delete-post">
     <% if current_user==@micropost.contributer %>
       <hr>
+=======
+  <hr>
+  <div class="container delete-post">
+    <% if current_user==@micropost.contributer %>
+>>>>>>> e14ad495c9c52bb6c8f63a72084b0d65e4814b57
       <%= link_to '投稿を取り消す', @micropost, method: :delete, data:{confirm: "本当に取り消しますか"}, class:"btn btn-danger btn-block" %>
     <% end %>
   </div>
