@@ -3,5 +3,7 @@
 
 <div class="user-view clearfix ">
   <%= link_to gravatar_for(visiter), user_path(visiter) %>
-  <p><%= link_to visiter.name, user_path(visiter) %>があなたを<%= notification.action %>しました</p>
+  <%== notification_form(notification) %><span class="moderate-font"><%= " (#{time_ago_in_words(notification.created_at)}前)" %></span>
+  <br>
+  <p class="moderate-font"><%= @comment if !@comment.nil? %></p>
 </div>

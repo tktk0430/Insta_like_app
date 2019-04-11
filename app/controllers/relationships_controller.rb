@@ -1,6 +1,6 @@
 class RelationshipsController < ApplicationController
   include NotificationsHelper
-  @@action_name="Follow"
+  @@action_name="follow"
   before_action :login_user?
 
   def create

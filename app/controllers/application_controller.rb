@@ -19,4 +19,5 @@ class ApplicationController < ActionController::Base
   def set_default_micropost
     @micropost=Micropost.new
   end
+
 end

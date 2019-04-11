@@ -8,7 +8,11 @@
         <% if login? %>
           <ul class="nav">
             <li><%= menu_link_to 'マイページ', user_path(current_user), class:"btn" %></li>
-            <li><%= menu_link_to '通知', notifications_path, class:"btn"  %></li>
+            <li class="notification"><%= menu_link_to '通知', notifications_path, class:"btn"  %>
+              <% if unchecked_notifications.any? %>
+                <i class="fa fa-circle notification-circle"></i>
+              <% end %>
+            </li>
             <li><%= menu_link_to 'ユーザ一覧', users_path, class:"btn"  %></li>
             <li><%= menu_link_to 'ログアウト', logout_path, method: :delete, class:"btn"  %></li>
           </ul>

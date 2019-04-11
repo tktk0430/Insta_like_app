@@ -6,7 +6,7 @@ class Micropost < ApplicationRecord
   has_many :passive_like, class_name: "Like"
   has_many :like_users, through: :passive_like, source: :user
   has_many :comments
-  has_many :notifications
+  has_many :notifications,dependent: :destroy
   
   validates :user_id, presence: true
   validates :content, length:{maximum: 180}

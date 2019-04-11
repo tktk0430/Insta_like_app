@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
     comment=current_user.comments.new(micropost_id:params[:micropost_id],content: params[:comment][:content])
     @micropost=Micropost.find(params[:micropost_id])
     comment.save
-    create_notification(micropost:@micropost,visited:@micropost.contributer,action_name:@@action_name)
+    create_notification(micropost:@micropost,visited:@micropost.contributer,action_name:@@action_name,comment:comment.id)
     respond_to do |format|
       format.html {redirect_to request.referrer || root_url}
       format.js
