@@ -7,7 +7,9 @@ class User < ApplicationRecord
   has_many :followers, through: :passive_relationship, source: :follower
   has_many :active_like, class_name: "Like", dependent: :destroy
   has_many :like_posts, through: :active_like, source: :micropost
-  has_many :comments
+  has_many :comments, dependent: :destroy
+  has_many :active_notifications, class_name: "Notification", foreign_key: "visiter_id", dependent: :destroy
+  has_many :passive_notifications, class_name: "Notification", foreign_key: "visited_id", dependent: :destroy
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, length: {maximum: 200},

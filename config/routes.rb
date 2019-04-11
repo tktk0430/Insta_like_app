@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   resources :users do
     member do
-      get :following, :followers, :like_posts
+      get :following, :followers, :like_posts, :microposts
     end
     get 'search', on: :collection
   end
@@ -22,4 +22,5 @@ Rails.application.routes.draw do
   resources :relationships, only: [:create, :destroy]
   resources :likes, only: [:create, :destroy]
   resources :comments, only: [:create, :destroy]
+  resources :notifications, only: :index
 end

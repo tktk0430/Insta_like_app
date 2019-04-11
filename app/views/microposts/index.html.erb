@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-md-4 none">
       <% unless current_user==@user %>
-        <%= follow_button %>
+        <%= render 'partials/follow_button' %>
       <% end %>
       <%= render 'partials/user_profile' %>
     </div>

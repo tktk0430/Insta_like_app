@@ -67,10 +67,17 @@ class UsersController < ApplicationController
     render 'users/index'
   end
 
+  def microposts
+    @user=User.find(params[:id])
+    @microposts=@user.microposts.page(params[:page]).per(12)
+    @page_title="#{@user.name}が投稿した画像"
+    render 'microposts/index'
+  end
+
   def like_posts
     @user=User.find(params[:id])
     @microposts=@user.like_posts.page(params[:page]).per(12)
-    @page_title="いいね！した画像"
+    @page_title="#{@user.name}がいいね！した画像"
     render 'microposts/index'
   end
 

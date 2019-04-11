@@ -1,0 +1,7 @@
+<% visiter=notification.visiter %>
+<% post=notification.micropost %>
+
+<div class="user-view clearfix ">
+  <%= link_to gravatar_for(visiter), user_path(visiter) %>
+  <p><%= link_to visiter.name, user_path(visiter) %>があなたを<%= notification.action %>しました</p>
+</div>

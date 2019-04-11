@@ -15,7 +15,7 @@
   <div class="assets">
     <%= link_to "フォロー #{@user.following.count}", following_user_path(@user) %>
     <%= link_to "フォロワー #{@user.followers.count}", followers_user_path(@user) %>
-    <%= link_to "画像投稿  #{@user.microposts.count}", @user %>
+    <%= link_to "画像投稿  #{@user.microposts.count}", microposts_user_path(@user) %>
     <%= link_to "いいね #{@user.like_posts.count}", like_posts_user_path(@user) %>
   </div>
 </div>

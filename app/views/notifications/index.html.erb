@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 none">
+      <%= render 'partials/user_profile' %>
+    </div>
+    <div class="user-contents col-md-8">
+      <div class="users-index">
+        <%= paginate @notifications %>
+        <%= render @notifications %>
+        <%= paginate @notifications %>
+      </div>
+    </div>
+  </div>
+</div>
