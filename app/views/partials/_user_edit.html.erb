@@ -1,4 +1,5 @@
 <div class="left-side-content">
+  <%= link_to 'ログアウト', logout_path, method: :delete, class:"btn btn-danger btn-block"  %>
   <%= form_for @user do |f| %>
     <%= render 'partials/errors', obj:f.object %>
 
