@@ -40,7 +40,7 @@ class MicropostsInterfaceTest < ActionDispatch::IntegrationTest
     #投稿詳細の確認
     first_micropost=@tom.microposts.first
     get micropost_path(first_micropost)
-    assert_template 'microposts/show'
+    assert_template 'microposts/_show'
     #投稿削除の確認
     assert_select 'a' , text: '投稿を取り消す'
     assert_difference 'Micropost.count', -1 do
@@ -49,7 +49,7 @@ class MicropostsInterfaceTest < ActionDispatch::IntegrationTest
     #他の人の投稿は削除できない
     other_micropost=@bob.microposts.first
     get micropost_path(other_micropost)
-    assert_template 'microposts/show'
+    assert_template 'microposts/_show'
     assert_select 'a' , text: '投稿を取り消す', count:0
     assert_no_difference 'Micropost.count' do
       delete micropost_path(other_micropost)
