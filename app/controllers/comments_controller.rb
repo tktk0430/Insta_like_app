@@ -3,13 +3,21 @@ class CommentsController < ApplicationController
 
   def create
     comment=current_user.comments.new(micropost_id:params[:micropost_id],content: params[:comment][:content])
+    @micropost=Micropost.find(params[:micropost_id])
     comment.save
-    redirect_to request.referrer || root_url
+    respond_to do |format|
+      format.html {redirect_to request.referrer || root_url}
+      format.js
+    end
   end
 
   def destroy
     comment=current_user.comments.find(params[:id])
+    @micropost=comment.micropost
     comment.destroy
-    redirect_to request.referrer || root_url
+    respond_to do |format|
+      format.html {redirect_to request.referrer || root_url}
+      format.js
+    end
   end
 end

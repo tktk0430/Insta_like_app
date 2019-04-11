@@ -16,16 +16,8 @@
       <div id="like_button">
         <%= render 'partials/like_button' %>
       </div>
-      <div class="micropost-comments">
-        <%= render @micropost.comments %>
-      </div>
-      <div class="comment-form clearfix">
-        <%= form_for (current_user.comments.build) do |f| %>
-          <%= hidden_field_tag :micropost_id, @micropost.id %>
-          <%= f.text_field :content, class:"form-control comment-form-text" %>
-          <%= f.object.errors.full_messages.first if f.object.errors.present? %>
-          <%= f.submit "コメント", class:"btn btn-primary pull-right" %>
-        <% end %>
+      <div id="micropost_comments">
+        <%= render 'microposts/comments' %>
       </div>
       <button type="button" class="btn btn-default pull-right" data-dismiss="modal">閉じる</button>
     </div>
