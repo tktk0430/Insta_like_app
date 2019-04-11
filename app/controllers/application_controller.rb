@@ -15,4 +15,8 @@ class ApplicationController < ActionController::Base
       redirect_to root_path
     end
   end
+
+  def set_default_micropost
+    @micropost=Micropost.new
+  end
 end

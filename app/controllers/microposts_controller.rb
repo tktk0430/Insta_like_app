@@ -8,20 +8,29 @@ class MicropostsController < ApplicationController
 
   def show
     @micropost=Micropost.find(params[:id])
-    @user=@micropost.contributer
   end
 
   def new
     @micropost=current_user.microposts.build
+    respond_to do |format|
+      format.html { render 'microposts/_new' }
+      format.js
+    end
   end
 
   def create
     @micropost=current_user.microposts.build(micropost_params)
     if @micropost.save
       flash[:success] = "画像を投稿しました"
-      redirect_to current_user
+      respond_to do |format|
+        format.html { redirect_to root_path }
+        format.js { redirect_to root_path }
+      end
     else
-      render 'new'
+      respond_to do |format|
+        format.html { render 'microposts/_new' }
+        format.js
+      end
     end
   end
 

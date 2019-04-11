@@ -15,7 +15,7 @@ class MicropostsInterfaceTest < ActionDispatch::IntegrationTest
     assert_select 'a[href=?]', new_micropost_path
     #新規投稿画面の確認
     get new_micropost_path
-    assert_select 'a[href=?]', new_micropost_path, count:0
+    assert_select 'a[href=?]', new_micropost_path #Ajaxならまだnew_micropost_pathはのこる
     assert_select 'input#micropost_image'
     assert_select 'textarea#micropost_content'
     assert_select 'input[type=?]', "submit"
@@ -24,12 +24,12 @@ class MicropostsInterfaceTest < ActionDispatch::IntegrationTest
     assert_no_difference 'Micropost.count' do
       post microposts_path, params:{micropost:{image:"",content:"hoge"}}
     end
-    assert_template 'microposts/new'
+    assert_template 'microposts/_new' #Ajax化に伴い'microposts/new'を'microposts/_new'に変更
     assert_select '#errors'
     assert_difference 'Micropost.count', 1 do
       post microposts_path, params:{micropost:{image: @test_image, content:""}}
     end
-    assert_redirected_to @tom
+    assert_redirected_to root_path
     follow_redirect!
     assert_not flash.nil?
     #投稿反映の確認

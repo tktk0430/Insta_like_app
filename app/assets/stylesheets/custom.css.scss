@@ -132,7 +132,11 @@ footer{
   }
 }
 
-.root-page{
+.top-background{
+  background-image: image-url('top_background.jpg');
+  background-size: cover;
+  height: 700px;
+  opacity: 0.9;
   .btn{
     width: 300px;
     margin: 10px auto 0px;
@@ -149,12 +153,6 @@ footer{
     width: 100px;
     margin-right: 20px;
   }
-}
-.top_background{
-  background-image: image-url('top_background.jpg');
-  background-size: cover;
-  height: 700px;
-  opacity: 0.9;
 }
 
 .content-wrapper{
@@ -306,4 +304,8 @@ footer{
 }
 .comment-form-text{
   margin-bottom: 0px;
+}
+
+.mordal-window{
+  margin-top: 8vh;
 }

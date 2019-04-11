@@ -29,7 +29,7 @@
   </div>
 </div>
 <div class="container delete-post">
-  <% if correct_user %>
+  <% if current_user==@micropost.contributer %>
     <%= link_to '投稿を取り消す', @micropost, method: :delete, data:{confirm: "本当に取り消しますか"}, class:"btn btn-danger" %>
   <% end %>
 </div>
