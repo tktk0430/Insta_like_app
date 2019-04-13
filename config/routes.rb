@@ -24,4 +24,5 @@ Rails.application.routes.draw do
   resources :comments, only: [:create, :destroy]
   resources :notifications, only: :index
   resources :testusers, only: :create
+  resources :testsessions, only: :create
 end
