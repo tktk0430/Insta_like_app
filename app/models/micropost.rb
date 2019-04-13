@@ -9,6 +9,6 @@ class Micropost < ApplicationRecord
   has_many :notifications,dependent: :destroy
   
   validates :user_id, presence: true
-  validates :content, length:{maximum: 180}
+  validates :content, length:{maximum: 240}
   validates :image_data, presence: { message: "が選択されていません" }
 end

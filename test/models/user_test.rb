@@ -70,7 +70,7 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "introductionは200字以内" do
-    @user.introduction = "a"*201
+    @user.introduction = "a"*241
     assert_not @user.valid?
   end
 
@@ -80,7 +80,7 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "webは200字以内" do
-    @user.web = "https://"+"a"*200
+    @user.web = "https://"+"a"*201
     assert_not @user.valid?
   end
 end

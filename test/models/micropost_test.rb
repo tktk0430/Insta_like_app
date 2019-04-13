@@ -21,7 +21,7 @@ class MicropostTest < ActiveSupport::TestCase
   end
 
   test "content should not be too long" do
-    @micropost.content="a" * 181
+    @micropost.content="a" * 241
     assert_not @micropost.valid?
   end
 

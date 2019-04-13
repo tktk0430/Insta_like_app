@@ -82,6 +82,11 @@ class UsersController < ApplicationController
     render 'microposts/index'
   end
 
+  def search
+    @users=User.search()
+    redirect_to 'users/index'
+  end
+
   private
     def set_default_name
       params[:user][:name]="名無しさん" if params[:user][:name].nil? || params[:user][:name].empty?

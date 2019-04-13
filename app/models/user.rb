@@ -19,7 +19,7 @@ class User < ApplicationRecord
   validates :email, presence: true
   validates :name,presence: true, length: {maximum: 20}
   validates :account, presence: true, uniqueness: true, length: {maximum: 20}
-  validates :introduction, length: {maximum: 200}
+  validates :introduction, length: {maximum: 240}
   validates :password,length:{minimum: 6}, allow_nil: true
   validates :web, length: {maximum: 200}
 
@@ -36,4 +36,11 @@ class User < ApplicationRecord
     BCrypt::Password.create(string, cost: cost)
   end
   
+  def self.search(query)
+    ret=oreder(created_at: :desc)
+    if query.exists?
+      ret=ret.where("name LIKE ? or account LIKE ? or introduction LIKE ?", "#{query}","#{query}","#{query}")
+    end
+    return ret
+  end
 end

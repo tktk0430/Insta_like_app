@@ -5,7 +5,7 @@ class TestusersController < ApplicationController
     account=DateTime.now.to_time.to_i
     @user=User.new(name: "ご新規さま#{account}", 
                   account: "new#{account}", 
-                  introduction: "登録日：#{Date.today}",
+                  introduction: "登録日は#{Date.today}です。ぜひ設定からお名前やこのアプリの感想を記して頂けると嬉しく思います。",
                   email: "#{account}@example.com",
                   password:"password",
                   password_confirmation:"password",
