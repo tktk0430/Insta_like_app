@@ -1,13 +1,13 @@
 module ApplicationHelper
   def page_title
-    !@page_title.nil? ? "#{@page_title} | Clonestagram" : "Clonestagram"
+    !@page_title.nil? ? "#{@page_title} | Images" : "Images"
   end
 
   def logo
     if login?
-      link_to 'Clonestagram', root_path, id:'logo', class:'none'
+      link_to 'Images', root_path, id:'logo', class:'none'
     else
-      link_to 'Clonestagram', root_path, id:'logo'
+      link_to 'Images', root_path, id:'logo'
     end
   end
 
