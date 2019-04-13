@@ -87,11 +87,7 @@ class UsersController < ApplicationController
     end
 
     def user_params
-      if current_user&.account=="tester"
-        params.require(:user).permit(:name, :account, :sex, :introduction, :web, :tel)
-      else
-        params.require(:user).permit(
-        :name, :email, :account, :sex, :introduction, :web, :tel, :password, :password_confirmation)
-      end
+      params.require(:user).permit(
+      :name, :email, :account, :sex, :introduction, :web, :tel, :password, :password_confirmation, :image)
     end
 end

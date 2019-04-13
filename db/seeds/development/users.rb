@@ -9,6 +9,7 @@ User.create!(
   password: "password",
   password_confirmation: "password",
   admin: true,
+  image: File.open("#{Rails.root}/db/thumb_image_seeds/master.jpg")
 )
 User.create!(
   email: "test@example.com",
@@ -21,12 +22,16 @@ User.create!(
   password: "password",
   password_confirmation: "password",
   admin: false,
+  image: File.open("#{Rails.root}/db/thumb_image_seeds/tester.jpg")
 )
+
+image_num_array=[*1..10].shuffle!
 10.times do |n|
   email="example-#{n}@example.com"
   name=Faker::Name.name
   account="user#{n}"
   password="password"
+  image_num=image_num_array.shift
   User.create!(
     email: email,
     name: name,
@@ -36,6 +41,7 @@ User.create!(
     tel: Faker::PhoneNumber.phone_number,
     sex: n%3,
     password: password,
-    password_confirmation: password
+    password_confirmation: password,
+    image: File.open("#{Rails.root}/db/thumb_image_seeds/#{image_num}.jpg")
   )
 end

@@ -9,7 +9,7 @@ class UserProfileTest < ActionDispatch::IntegrationTest
     login_as(@tom)
     get user_path(@tom)
     assert_select 'header'
-    assert_select '.gravatar'
+    assert_select '.user-thumb'
     assert_select "a[href=?]", edit_user_path(@tom)
     assert_select '.introduction'
     #assert_select 'follow_path' if not follow

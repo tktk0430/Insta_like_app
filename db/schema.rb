@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_11_214537) do
+ActiveRecord::Schema.define(version: 2019_04_13_044350) do
 
   create_table "comments", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -75,6 +75,10 @@ ActiveRecord::Schema.define(version: 2019_04_11_214537) do
     t.string "web"
     t.integer "tel"
     t.integer "sex", default: 2, null: false
+    t.string "provider"
+    t.string "uid"
+    t.string "image"
+    t.text "image_data"
   end
 
 end

@@ -8,7 +8,8 @@ class TestusersController < ApplicationController
                   introduction: "登録日：#{Date.today}",
                   email: "#{account}@example.com",
                   password:"password",
-                  password_confirmation:"password")
+                  password_confirmation:"password",
+                  image: File.open("#{Rails.root}/db/thumb_image_seeds/default.jpg"))
     if @user.save
       login(@user)
       flash[:success]="ようこそ！Passwordは'password'です"

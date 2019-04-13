@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  include ImageUploader[:image]
   has_secure_password
   has_many :microposts, dependent: :destroy
   has_many :active_relationship, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy
@@ -21,6 +22,9 @@ class User < ApplicationRecord
   validates :introduction, length: {maximum: 200}
   validates :password,length:{minimum: 6}, allow_nil: true
   validates :web, length: {maximum: 200}
+
+  # devise :database_authenticatable, :registerable,
+  #        :recoverable, :rememberable, :validatable,  :omniauthable
 
   attr_accessor :current_password
 

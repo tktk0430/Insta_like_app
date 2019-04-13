@@ -3,7 +3,7 @@
     <a href="<%= edit_user_path(@user) %>" class="top-right-icon fa fa-cog" >設定</a>
   <% end %>
   <div class="abstract">
-    <%= gravatar_for(@user, size: 100) %>
+    <%=  image_tag @user.image[:small].url, class:"user-thumb", style:"width: 100px;"%>
     <h4><%= @user.name %></h4>
     <p><%= "@#{@user.account}" %></p>
   </div>

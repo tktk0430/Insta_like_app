@@ -20,6 +20,7 @@ ja:
         password_confirmation: パスワード（確認用）
         password_digest: パスワード
         current_password: 現在のパスワード
+        image_data: サムネイル画像
       micropost:
         content: 本文
         image_data: 画像

@@ -179,10 +179,12 @@ footer{
   background-color: var(--content_background_color);
   border-radius: 10px;
 }
-
+.user-thumb{
+  width: 20px;
+}
 .user-view{
   padding:10px;
-  .gravatar{
+  .user-thumb{
     float: left;
     border-radius: 50%;
     margin-right: 10px;
@@ -227,7 +229,7 @@ footer{
       justify-content:center;
     }
   }
-  .gravatar{
+  .user-thumb{
     float: left;
     border-radius: 50%;
     margin-right: 20px;

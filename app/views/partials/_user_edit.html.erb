@@ -1,8 +1,14 @@
 <div class="left-side-content">
   <%= link_to 'ログアウト', logout_path, method: :delete, class:"btn btn-danger btn-block"  %>
+  <br>
   <%= form_for @user do |f| %>
     <%= render 'partials/errors', obj:f.object %>
 
+    <%= f.label :image_data %>
+    <%= f.hidden_field :image, value:@user.cached_image_data %>
+    <%= f.file_field :image, accept: 'image/jpeg,image/png'%>
+    <br>
+    
     <%= f.label :name %>
     <%= f.text_field :name, class: 'form-control' %>
 
