@@ -23,4 +23,5 @@ Rails.application.routes.draw do
   resources :likes, only: [:create, :destroy]
   resources :comments, only: [:create, :destroy]
   resources :notifications, only: :index
+  resources :testusers, only: :create
 end
