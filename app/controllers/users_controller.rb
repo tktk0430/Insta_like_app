@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   def index
     @users=User.page(params[:page]).per(10)
     @user=current_user
-    @page_title="ユーザー一覧"
+    @page_title="ユーザ一覧"
   end
 
   def show
@@ -52,18 +52,19 @@ class UsersController < ApplicationController
   end
 
   def following
+    
     @user=User.find(params[:id])
 
     @users=@user.following.page(params[:page]).per(10)
     
-    @page_title="フォロー"
+    @page_title="#{@user.name}のフォロー"
     render 'users/index'
   end
 
   def followers
     @user=User.find(params[:id])
     @users=@user.followers.page(params[:page]).per(10)
-    @page_title="フォロワー"
+    @page_title="#{@user.name}のフォロワー"
     render 'users/index'
   end
 

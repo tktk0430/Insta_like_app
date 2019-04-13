@@ -4,6 +4,7 @@
       <%= render 'partials/user_profile' %>
     </div>
     <div class="user-contents col-md-8">
+      <h4 class="sub-title"><%= @page_title %></h4>
       <div class="users-index">
         <%= paginate @users %>
         <%= render @users %>

@@ -3,7 +3,7 @@ class TestsessionsController < ApplicationController
     @user=User.find_by(email:"test@example.com")
     if @user&.authenticate("password")
       session[:user_id] = @user.id
-      flash[:success] = "ログインしました。このユーザーはプロフィール設定機能が一部制限されています。"
+      flash[:success] = "ログインしました。"
       redirect_to @user
     else
       @user=User.new
