@@ -1,7 +1,60 @@
 <% @page_title = "About" %>
 
 <div class="container">
-  <div class="content-wrapper">
-    <h4>インスタをモデルにしたポートフォリオです。</h4>
+  <div class="content-wrapper" style="padding:20px;">
+    <p>Images Ver1.0をご利用いただきありがとうございます。</p>
+    <br>
+    <h3>どんなアプリ？</h3>
+    <hr>
+    <p>画像投稿型のSNSアプリです。馴染みのある機能を、使いやすさを重視して実装するように努めました。モバイルでの使い心地も多々考慮しました。</p>
+    <br>
+    <h3>実装した機能</h3>
+    <hr>
+    <ul　style="padding-left:2em;">
+      <li>ユーザ新規登録・退会機能</li>
+      <li>ユーザログイン・ログアウト機能</li>
+      <li>かんたん新規登録・ログイン機能 (Qiita執筆 : <u><a href="https://qiita.com/T-Hiros/items/4fe69c8efcb6a9c26ca5">記事)</a></u></li>
+      <li>ユーザ情報編集機能</li>
+      <li>画像投稿・リサイズ(ストレージ:AWS S3, アップローダー:Shrine, リサイズ:mini-magick)</li>
+      <li>画像投稿・表示はAjaxで実装</li>
+      <li>フォロー機能</li>
+      <li>いいね機能</li>
+      <li>画像へのコメント機能</li>
+      <li>通知機能(フォロー、いいね、コメントに反応)</li>
+      <li>画像検索機能</li>
+      <li>レスポンシブデザイン対応</li>
+      <li>i18nを用いた国際化</li>
+      <li>(開発)テスト実装(minitest)</li>
+      <li>(開発)サンプルユーザ一括登録</li>
+    </ul>
+    <br>
+    <p>開発環境:CentOS7 (Vagrant使用)(Qiita執筆 : <u><a href="https://qiita.com/T-Hiros/items/ade733e4dff00be7a051">記事)</a></u></p>
+    <p>Ver1.0実装期間 : 14日間, 130時間ほど</p>
+    <br>
+    <h3>苦労したこと</h3>
+    <hr>
+    <ul　style="padding-left:2em;">
+      <li>CSSが期待通りにいかずに苦労した</li>
+      <li>Railsのお決まりを知らずにエラーでハマることが多かった(belongs_toはデフォルトでnull:false、form_withはデフォルトでjsをリクエストする等)</li>
+      <li>通知テーブルの設計。一つのテーブルでフォローといいねとコメントを扱うのは難しかった</li>
+      <li>Ajaxの設計</li>
+      <li>seedファイルの設計、特に画像アップロードの方法でハマった</li>
+    </ul>
+    <br>
+    <h3>ロードマップ</h3>
+    <hr>
+    <ul　style="padding-left:2em;">
+      <li>Facebookログインの実装</li>
+      <li>検索機能の強化（投稿に位置情報を持たせ、現在地からの距離などで検索できるようにしたい)</li>
+      <li>(開発)開発環境のDocker化</li>
+      <li>(開発)CircleCIによるデプロイ自動化</li>
+      <li>(開発)Rspecでのテスト記述方法の習得</li>
+    </ul>
+    <br>
+    <h3>最後に</h3>
+    <hr>
+    <p>ここまで読んでいただきありがとうございました。本アプリをたのしく使っていただけますと幸いです。よろしくお願いいたします。</p><br>
+    <%= link_to '新規登録', "/signup", class:"btn btn-lg btn-primary center-block",id:"signup-btn"%>
+    <%= link_to 'かんたん新規登録', testusers_path, method: :post, class:"btn btn-lg btn-warning center-block" %>
   </div>
 </div>
