@@ -21,7 +21,7 @@ class UsersController < ApplicationController
 
   def create
     @user=User.new(user_params)
-    @user.image=File.open("#{Rails.root}/db/thumb_image_seeds/default.jpg"))
+    @user.image=File.open("#{Rails.root}/db/thumb_image_seeds/default.jpg")
     if @user.save
       login(@user)
       flash[:success]="ようこそ！"
