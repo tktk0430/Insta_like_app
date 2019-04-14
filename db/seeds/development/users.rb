@@ -15,7 +15,7 @@ User.create!(
   email: "test@example.com",
   name: "テスト太郎",
   account: "tester",
-  introduction: "初めまして。テストユーザーです。トップページの「かんたんログイン」で私にログインできます。来るもの拒まず。座右の銘はオープンマインド。",
+  introduction: "初めまして。テストユーザーです。トップページの「かんたんログイン」で私にログインできます。",
   web: Faker::Internet.url,
   tel: Faker::PhoneNumber.phone_number,
   sex: 1,
