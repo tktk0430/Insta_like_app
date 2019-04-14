@@ -9,6 +9,7 @@ https://pumpkin-custard-78083.herokuapp.com/
 - 誤ってAWS情報をプッシュしてしまった後の処理
 - Ajax設計
 - 通知機能
+- レスポンシブデザイン対応
 
 # 学んだ点
 - herokuやS3などとのインフラ連携
