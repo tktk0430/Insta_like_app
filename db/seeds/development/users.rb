@@ -2,7 +2,7 @@ User.create!(
   email: "taku@example.com",
   name: "広澤 拓",
   account: "master",
-  introduction: "初めまして。このサイトの製作者です。ご覧いただきありがとうございます。ごゆるりとお過ごしください。",
+  introduction: "初めまして。このサイトの製作者です。ご覧いただきありがとうございます。",
   web: Faker::Internet.url,
   tel: Faker::PhoneNumber.phone_number,
   sex: 1,
