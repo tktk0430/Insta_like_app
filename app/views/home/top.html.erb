@@ -1,0 +1,29 @@
+<div class="root-page">
+  <% if login? %>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 none" id="account_contents" >
+          <%= render 'partials/user_profile' %>
+        </div>
+        <div class="user-contents col-md-8" id="multiple_contents">
+          <h4 class="sub-title">タイムライン</h4>
+          <% if !@microposts.exists? %>
+            <p><u><%= link_to 'ユーザ一覧', users_path %></u>から誰かフォローしてみましょう！</p>
+          <% else %>
+            <ul class="user-posts">
+              <%= render @microposts %>
+            </ul>
+            <%= paginate @microposts %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% else %>
+    <div class="container top-background">
+      <%= link_to '新規登録', "/signup", class:"btn btn-lg btn-primary center-block",id:"signup-btn"%>
+      <%= link_to 'ログイン', "/login",class:"btn btn-lg center-block btn-info",id:"signin-btn"%>
+      <%= link_to 'かんたん新規登録', testusers_path, method: :post, class:"btn btn-lg btn-warning center-block" %>
+      <%= link_to 'かんたんログイン', testsessions_path, method: :post, class:"btn btn-lg btn-success center-block" %>
+    </div>
+  <% end %>
+</main>

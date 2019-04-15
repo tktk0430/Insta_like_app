@@ -1,0 +1,22 @@
+<% @page_title="通知" %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 none">
+      <%= render 'partials/user_profile' %>
+    </div>
+    <div class="user-contents col-md-8">
+      <h4 class="sub-title">通知</h4>
+      <% if @notifications.exists? %>
+        <div class="users-index">
+          <%= paginate @notifications %>
+          <%= render @notifications %>
+          <%= paginate @notifications %>
+        </div>
+      <% else %>
+        <p>フォローされたり、自分の投稿にいいね！されるとここに通知が来ます</p>
+        <p>ためしに自分の記事に自分でいいね！をしてみましょう！</p>
+      <% end %>
+    </div>
+  </div>
+</div>

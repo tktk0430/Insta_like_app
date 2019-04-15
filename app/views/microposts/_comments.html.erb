@@ -1,0 +1,11 @@
+<div class="micropost-comments" id="micropost_comments" >
+  <%= render @micropost.comments %>
+</div>
+<div class="comment-form clearfix">
+  <%= form_for (current_user.comments.build), remote: true do |f| %>
+    <%= hidden_field_tag :micropost_id, @micropost.id %>
+    <%= f.text_field :content, class:"form-control comment-form-text" %>
+    <%= f.object.errors.full_messages.first if f.object.errors.present? %>
+    <%= f.submit "コメント", class:"btn btn-primary pull-right" %>
+  <% end %>
+</div>

@@ -1,0 +1,8 @@
+<div class="container left-side-content">
+  <h4>画像検索</h4>
+  <%= @alert unless @alert.nil? %>
+  <%= form_with url: searches_path, method: :get, local: true do |f| %>
+    <%= f.text_field :query, class:"form-control",autofocus: true %>
+    <%= f.submit '検索', class:"btn btn-default pull-right" %>
+  <% end %>
+</div>

@@ -1,0 +1,9 @@
+<div class="user-view clearfix ">
+  <% unless user.image_data.nil? %>
+  <%= link_to user_path(user) do %>
+    <%=  image_tag user.image[:small].url, class:"user-thumb", style:"width: 60px;"%>
+  <% end %>
+  <% end %>
+  <h4><%= link_to user.name, user_path(user) %></h4>
+  <p><%= user.introduction&.truncate(30) %></p>
+</div>

@@ -1,0 +1,21 @@
+<div class="left-side-content">
+  <% if correct_user %>
+    <a href="<%= edit_user_path(@user) %>" class="top-right-icon fa fa-cog" >設定</a>
+  <% end %>
+  <div class="abstract">
+    <%=  image_tag @user.image[:small].url, class:"user-thumb", style:"width: 100px;"%>
+    <h4><%= @user.name %></h4>
+    <p><%= "@#{@user.account}" %></p>
+  </div>
+  <div class="introduction">
+    <p><%= @user.introduction %></p>
+  </div>
+  <p>web : <a href="<%= @user.web %>" target="_blank"><%= @user.web&.truncate(30) %></a></p>
+  <hr>
+  <div class="assets">
+    <%= link_to "フォロー #{@user.following.count}", following_user_path(@user) %>
+    <%= link_to "フォロワー #{@user.followers.count}", followers_user_path(@user) %>
+    <%= link_to "画像投稿  #{@user.microposts.count}", microposts_user_path(@user) %>
+    <%= link_to "いいね #{@user.like_posts.count}", like_posts_user_path(@user) %>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+<div class="container top-background">
+  <div class="signup-form">
+    <h1>ログイン</h1>
+    <hr>
+    <div class="session-maker">
+      <%= form_for(@user, url: login_path) do |f| %>
+        <%= render 'partials/errors', obj:f.object %>
+        
+        <%= f.label :email %>
+        <%= f.text_field :email, class: "form-control",autofocus: true %>
+
+        <%= f.label :password %>
+        <%= f.password_field :password, class: "form-control" %>
+
+        <%= f.submit "ログイン", class:"btn btn-primary" %>
+        <%= link_to '戻る', root_path, class:"btn btn-default"%>
+      <% end %>
+    </div>
+  </div>
+</div>

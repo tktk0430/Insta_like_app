@@ -1,0 +1,33 @@
+ja:
+  activerecord:
+    models:
+      user: ユーザ
+      micropost: 投稿
+    attributes:
+      user:
+        email: メールアドレス
+        name: 名前
+        account: ユーザーネーム
+        sex: 性別
+        sex_0: 男性
+        sex_1: 女性
+        sex_2: 回答なし
+        web: ウェブサイト
+        tel: 電話番号
+        introduction: 自己紹介
+        admin: 管理者
+        password: パスワード
+        password_confirmation: パスワード（確認用）
+        password_digest: パスワード
+        current_password: 現在のパスワード
+        image_data: サムネイル画像
+      micropost:
+        content: 本文
+        image_data: 画像
+        image: 画像
+      search:
+        query: 検索ワード
+    errors:
+      messages:
+        wrong: が正しくありません
+        cannot_follow_self: は自信をフォローできません

@@ -1,0 +1,12 @@
+<footer>
+  <div class="container">
+    <% if login? %>
+      <div class="footer-layout">
+        <%= link_to 'ホーム', root_path, class:"btn btn-default btn-block none-when-wide" %>
+        <%= link_to '新規投稿', new_micropost_path, class:"btn btn-primary btn-block", remote: true %>
+      </div>
+    <% else %>
+      <%= link_to 'このサイトについて', about_path, class:"btn btn-default btn-block"%>
+    <% end %>
+  </div>
+</footer>

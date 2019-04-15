@@ -1,0 +1,31 @@
+<div class="container micropost-show">
+  <div class="row">
+    <div class="col-md-6 clearfix">
+      <div class="img-container-large">
+        <%= image_tag @micropost&.image[:large].url %>
+      </div>
+      <%= link_to "#{@micropost.contributer.name} :", @micropost.contributer %>
+      <div class="micropost-content">
+        <%= @micropost.content %>
+      </div>
+      <div class="micropost-created-at pull-right">
+        <%= "#{time_ago_in_words(@micropost.created_at)}前" %>
+      </div>
+    </div>
+    <div class="col-md-6 clearfix micropost-show-right">
+      <div id="like_button">
+        <%= render 'partials/like_button' %>
+      </div>
+      <div id="micropost_comments">
+        <%= render 'microposts/comments' %>
+      </div>
+      <button type="button" class="btn btn-default pull-right" data-dismiss="modal" style="width:82px;">閉じる</button>
+    </div>
+  </div>
+  <div class="container delete-post">
+    <% if current_user==@micropost.contributer %>
+      <hr>
+      <%= link_to '投稿を取り消す', @micropost, method: :delete, data:{confirm: "本当に取り消しますか"}, class:"btn btn-danger btn-block" %>
+    <% end %>
+  </div>
+</div>

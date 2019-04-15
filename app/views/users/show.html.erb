@@ -1,0 +1,31 @@
+<% @page_title = @user.name %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <% unless current_user==@user %>
+      <div id="follow-button">
+        <% if following?(@user) %>
+          <%= render 'partials/follow_button' %>
+        <% else %>
+          <%= render 'partials/follow_button' %>
+        <% end %>
+      </div>
+      <% end %>
+      <div id="user-profile">
+        <%= render 'partials/user_profile' %>
+      </div>
+    </div>
+    <div class="user-contents col-md-8">
+      <h4 class="sub-title"><%= "投稿一覧" %></h4>
+      <% if @microposts.exists? %>
+        <ul class="user-posts">
+          <%= render @microposts %>
+        </ul>
+        <%= paginate @microposts %>
+      <% else %>
+        <p>まだ投稿がありません。</p>
+      <% end %>
+    </div>
+  </div>
+</div>

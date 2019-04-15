@@ -1,0 +1,23 @@
+<header>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5">
+        <%= logo %>
+      </div>
+      <div class="col-md-7 header-nav">
+        <% if login? %>
+          <ul class="nav">
+            <li><%= menu_link_to 'マイページ', user_path(current_user), class:"btn" %></li>
+            <li class="notification"><%= menu_link_to '通知', notifications_path, class:"btn"  %>
+              <% if unchecked_notifications.any? %>
+                <i class="fa fa-circle notification-circle"></i>
+              <% end %>
+            </li>
+            <li><%= menu_link_to '検索', new_search_path, class:"btn" %></li>
+            <li><%= menu_link_to 'ユーザ一覧', users_path, class:"btn"  %></li>
+          </ul>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</header>

@@ -1,24 +1,21 @@
-# README
+# URL
+https://pumpkin-custard-78083.herokuapp.com/
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# クローンいただいた方へ
+`rails db:rebuild`でユーザーと投稿のサンプルデータを初期化＆一括作成できます。
 
-Things you may want to cover:
+# 自分が苦労した点
+- デザイン決めと実装(特にCSS)
+- 誤ってAWS情報をプッシュしてしまった後の処理
+- Ajax設計
+- 通知機能
+- レスポンシブデザイン対応
 
-* Ruby version
+# 学んだ点
+- herokuやS3などとのインフラ連携
+- link_to_unless_current, form_withなどのチュートリアルでは学ばなかった便利メソッド
+- 様々な多対多の関連付け
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# 自慢したい点・相談したい点
+- API連携まで手が回せなかったが、それ以外の主要な機能を抑えることができた
+- 今後はどのように学習を進めるのが効率的か？チュートリアルの次はガイドをやるべきか

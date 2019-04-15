@@ -1,15 +1,43 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>InstaLikeApp</title>
+    <title><%= page_title %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
   </head>
-
   <body>
-    <%= yield %>
+    <%= render 'partials/header' %>
+    <main>
+      <div class="modal fade" id="micropost_new" >
+      </div>
+      <%= render 'partials/flash' %>
+      <%= yield %>
+    </main>
+    <%= render 'partials/footer' %>
+    <%#= debug(params) if Rails.env.development? %>
   </body>
+  <div id="fb-root"></div>
+  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v3.2&appId=1355907647867757&autoLogAppEvents=1"></script>
+  <script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '1355907647867757',
+        xfbml      : true,
+        version    : 'v3.2'
+      });
+      FB.AppEvents.logPageView();
+    };
+
+    (function(d, s, id){
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) {return;}
+      js = d.createElement(s); js.id = id;
+      js.src = "https://connect.facebook.net/en_US/sdk.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
 </html>
