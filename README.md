@@ -30,6 +30,7 @@ https://pumpkin-custard-78083.herokuapp.com/
 - (開発)サンプルユーザ一括登録
 
 開発環境:CentOS7 (Vagrant使用)(Qiita執筆 : [Rails環境構築](https://qiita.com/T-Hiros/items/ade733e4dff00be7a0510))
+
 Ver1.0実装期間 : 14日間, 130時間ほど
 
 # ロードマップ
