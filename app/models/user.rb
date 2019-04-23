@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   include ImageUploader[:image]
+  include SessionsHelper
   has_secure_password
   has_many :microposts, dependent: :destroy
   has_many :active_relationship, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy
@@ -42,5 +43,21 @@ class User < ApplicationRecord
       ret=ret.where("name LIKE ? or account LIKE ? or introduction LIKE ?", "#{query}","#{query}","#{query}")
     end
     return ret
+  end
+
+  def create_notification_by(current_user)
+    notification=current_user.active_notifications.new(
+      visited_id:self.id,
+      action:"follow"
+    )
+    notification.save if notification.valid?
+  end
+
+  def delete_notification_by(current_user)
+    notification=current_user.active_notifications.find_by(
+      visited_id:self.id,
+      action:"follow"
+    )
+    notification.destroy if !notification.nil?
   end
 end
