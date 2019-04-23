@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
     comment=current_user.comments.new(micropost_id:params[:micropost_id],content: params[:comment][:content])
     @micropost=Micropost.find(params[:micropost_id])
     if comment.save
-      create_notification(micropost:@micropost,visited:@micropost.contributer,action_name:@@action_name,comment:comment.id)
+      comment.create_notification_by(current_user)
       respond_to do |format|
         format.html {redirect_to request.referrer || root_url}
         format.js
@@ -24,7 +24,7 @@ class CommentsController < ApplicationController
     comment=current_user.comments.find(params[:id])
     @micropost=comment.micropost
     comment.destroy
-    delete_notification(micropost:@micropost,visited:@micropost.contributer,action_name:@@action_name)
+    comment.delete_notification_by(current_user)
     respond_to do |format|
       format.html {redirect_to request.referrer || root_url}
       format.js
