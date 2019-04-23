@@ -22,7 +22,7 @@ https://pumpkin-custard-78083.herokuapp.com/
 - フォロー機能
 - いいね機能
 - 画像へのコメント機能
-- 通知機能(フォロー、いいね、コメントに反応)
+- 通知機能(フォロー、いいね、コメントに反応) (Qiita執筆 : [通知機能の作り方](https://qiita.com/T-Hiros/items/bdb8fbcf4ce3258b2d41))
 - 画像検索機能
 - レスポンシブデザイン対応
 - i18nを用いた国際化
