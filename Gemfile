@@ -44,6 +44,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'pry-doc'
   gem 'dotenv-rails'
+  gem 'rspec-rails'
 end
 
 group :development do
@@ -52,6 +53,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'better_errors'
+  gem 'spring-commands-rspec'
 end
 
 group :production do
