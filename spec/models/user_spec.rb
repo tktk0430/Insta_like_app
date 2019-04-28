@@ -1,70 +1,71 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  before do
-    @user=User.create(
-      name:"test",
-      account:"tester",
-      email:"tester@gmail.com",
-      password: "hogehoge",
-      password_confirmation: "hogehoge"
-    )
-    @another=User.create(
-      name:"another",
-      account:"another",
-      email:"another@gmail.com",
-      password: "foobar",
-      password_confirmation: "foobar"
-    )
+  it "のFactoryBotは正常に動く" do
+    ur=FactoryBot.build(:user)
+    expect(FactoryBot.build(:user)).to be_valid
   end
 
-  it "is valid with a first name, email, account, and password" do
+  before do
+    @user=FactoryBot.create(:user)
+    @another=FactoryBot.create(:user)
+  end
+
+  
+
+  it "はaccount,email,passwordがあれば有効" do
     expect(@user).to be_valid
   end
 
-  it "is invalid without name" do
+  it "は名前がなければ無効" do
     @user.name=nil
     @user.valid?
     expect(@user.errors[:name]).to include("を入力してください")
   end
 
-  it "is invalid with too long name" do
+  it "は名前が長すぎると無効" do
     @user.name="a"*21
     @user.valid?
     expect(@user.errors[:name]).to include("は20文字以内で入力してください")
   end
 
-  it "is invalid without account" do
+  it "はアカウント名がないと無効" do
     @user.account=nil
     @user.valid?
     expect(@user.errors[:account]).to include("を入力してください")
   end
 
-  it "is invalid with duplicated account" do
+  it "はアカウント名が被っていると無効" do
     @another.account=@user.account
     @another.valid?
     expect(@another.errors[:account]).to include("はすでに存在します")
   end
 
-  it "is invalid without password" do
+  it "はパスワードがないと無効" do
     @user.password=nil
     @user.valid?
     expect(@user.errors[:password]).to include("を入力してください")
   end
 
-  it "is invalid without email" do
+  it "は確認用のパスワードとパスワードが一致してないと無効" do
+    @user.password_confirmation="test"
+    @user.valid?
+    expect(@user.errors[:password_confirmation]).to include("とパスワードの入力が一致しません")
+  end
+
+  it "はemailがないと無効" do
     @user.email=nil
     @user.valid?
     expect(@user.errors[:email]).to include "を入力してください"
   end
 
-  it "is invalid with duplicated email" do
+  it "はemailが被っていると無効" do
     @another.email=@user.email
     @another.valid?
     expect(@another.errors[:email]).to include("はすでに存在します")
   end
 
-  it "is invalid with duplicated email" do
+  it "はemailが不正な文字列だと無効" do
     invalid_emails=%w(@@@gmail.com hogehogegmail.com hoge@gmail)
     invalid_emails.each do |email|
       @user.email=email
@@ -73,20 +74,20 @@ RSpec.describe User, type: :model do
     end
   end
 
-  it "is invalid with too long email" do
+  it "はemailが長すぎると無効" do
     @user.email="a"*201+"@gmail.com"
     @user.valid?
     expect(@user.errors[:email]).to include("は200文字以内で入力してください")
   end
 
-  it "is invalid with too long introduction" do
+  it "は自己紹介が長すぎると無効" do
     @user.introduction="a"*241
     @user.valid?
     expect(@user.errors[:introduction]).to include("は240文字以内で入力してください")
   end
 
   describe "notification methods" do
-    it "create and delete a notification from user to another" do
+    it "により@userから@anotherへのフォロー通知が作られる" do
       @another.create_notification_by(@user)
       notif=Notification.find_by(visiter_id:@user.id,visited_id:@another.id)
       expect(notif).not_to be_nil
