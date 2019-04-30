@@ -87,7 +87,7 @@ RSpec.describe User, type: :model do
   end
 
   describe "notification methods" do
-    it "により@userから@anotherへのフォロー通知が作られる" do
+    it "によりフォロー通知が作られる" do
       @another.create_notification_by(@user)
       notif=Notification.find_by(visiter_id:@user.id,visited_id:@another.id)
       expect(notif).not_to be_nil
