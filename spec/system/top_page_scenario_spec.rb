@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "TopPageScenarios", type: :feature do
+RSpec.describe "TopPageScenarios", type: :system do
   context '新規登録' do
     scenario '成功：名前入力あり' do
       visit root_path
