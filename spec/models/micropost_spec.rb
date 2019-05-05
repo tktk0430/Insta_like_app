@@ -28,7 +28,7 @@ RSpec.describe Micropost, type: :model do
     expect(post).not_to be_valid
   end
 
-  describe 'いいね！通知作成・削除' do
+  describe 'いいね！通知メソッド' do
     it "によりいいね！通知が送られる＆削除される" do
       user=FactoryBot.create(:user)
       another=FactoryBot.create(:user)
