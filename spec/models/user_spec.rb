@@ -86,7 +86,7 @@ RSpec.describe User, type: :model do
     expect(@user.errors[:introduction]).to include("は240文字以内で入力してください")
   end
 
-  describe "フォロー通知作成メソッド" do
+  describe "フォロー通知メソッド" do
     it "によりフォロー通知が作られる" do
       @another.create_notification_by(@user)
       notif=Notification.find_by(visiter_id:@user.id,visited_id:@another.id)
