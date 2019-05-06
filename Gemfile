@@ -47,6 +47,11 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'spring-commands-rspec'
   gem "factory_bot_rails"
+  gem 'capybara'
+  gem 'selenium-webdriver'
+  gem 'database_cleaner'
+  gem 'webdrivers'
+  gem 'chromedriver-helper', '~> 1.1.0'
 end
 
 group :development do
@@ -55,12 +60,6 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'better_errors'
-end
-
-group :test do
-  gem 'capybara'
-  gem 'database_cleaner'
-  gem 'webdrivers'
 end
 
 group :production do

@@ -13,7 +13,6 @@ FactoryBot.define do
       :{\"id\":\"e472d58f9269891e98b85b40c42f8f1f.jpg\",\"storage\":\"store\",\"metadata\"
       :{\"filename\":\"image_processing20190506-17791-1m9x5xf.jpg\",\"size\":2113,\"mime_type\":\"image/jpeg\"}}}"
     }
-    # image {Rack::Test::UploadedFile.new(Rails.root.join('test', 'fixtures', 'files', 'tapir.jpg'), 'image/jpeg')}
-    # 毎回アップロードすると重い
+    #image {Rack::Test::UploadedFile.new(Rails.root.join('test', 'fixtures', 'files', 'tapir.jpg'), 'image/jpeg')}
   end
 end

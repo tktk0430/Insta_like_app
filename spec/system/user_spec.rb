@@ -123,17 +123,32 @@ RSpec.describe "User", type: :system do
     end
   end
 
-  context 'destroy(退会)', type: :system do
+  context 'destroy(退会):html', type: :system do
     scenario '退会成功' do
       visit root_path
       login(tom)
       visit user_path(tom)
       click_link '設定'
+      expect{click_link '退会する'}.to change(User.all, :count).by(-1)
+      expect(current_path).to eq root_path
+    end
+  end
+
+  context 'destroy(退会):JS', type: :system, js: true do
+    scenario '退会成功' do
+      skip 'Too slow test'
+      visit root_path
+      login(tom)
+      visit user_path(tom)
+      INITIAL_USERS_NUM=User.all.count
+      click_link '設定'
       unsubscribe = find_link '退会する'
       expect(unsubscribe['data-confirm']).to eq '本当に退会しますか'
-      expect{
+      page.accept_confirm '本当に退会しますか' do
         click_link '退会する'
-      }.to change(User.all,:count).by(-1)
+      end
+      expect(current_path).to eq root_path
+      expect(User.all.count).to eq INITIAL_USERS_NUM-1
     end
   end
 end
