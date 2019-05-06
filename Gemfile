@@ -60,6 +60,7 @@ end
 group :test do
   gem 'capybara'
   gem 'database_cleaner'
+  gem 'webdrivers'
 end
 
 group :production do
