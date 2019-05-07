@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.describe "User", type: :system do
   let(:tom){FactoryBot.create(:user,name:'tom')}
   let(:bob){FactoryBot.create(:user,name:'bob')}
+  let(:alice){FactoryBot.create(:user,name:'alice')}
 
   context 'new(新規登録)' do
     scenario '成功：名前入力あり' do
@@ -131,6 +132,42 @@ RSpec.describe "User", type: :system do
       click_link '設定'
       expect{click_link '退会する'}.to change(User.all, :count).by(-1)
       expect(current_path).to eq root_path
+    end
+  end
+
+  context 'following (フォロー一覧)' do
+    before do
+      login(tom)
+      tom.follow(alice)
+      tom.follow(bob)
+    end
+
+    scenario '自分のページにはフォローしている人の数が表示され、それを押すとフォローしている人一覧が表示される' do
+      visit user_path(tom)
+      expect(page.body).to have_content "フォロー #{tom.following.count}"
+      click_link "フォロー #{tom.following.count}"
+      expect(current_path).to eq following_user_path(tom)
+      tom.following.each do |following|
+        expect(page.body).to have_content following.name
+      end
+    end
+  end
+
+  context 'followers (フォロワー一覧)' do
+    before do
+      login(tom)
+      alice.follow(tom)
+      bob.follow(tom)
+    end
+
+    scenario '自分のページにはフォロワーの数が表示され、それを押すとフォロワー一覧が表示される' do
+      visit user_path(tom)
+      expect(page.body).to have_content "フォロワー #{tom.followers.count}"
+      click_link "フォロワー #{tom.followers.count}"
+      expect(current_path).to eq followers_user_path(tom)
+      tom.followers.each do |follower|
+        expect(page.body).to have_content follower.name
+      end
     end
   end
 end

@@ -45,6 +45,10 @@ class User < ApplicationRecord
     return ret
   end
 
+  def follow(user)
+    self.active_relationship.create(followed_id: user.id)
+  end
+
   def create_notification_by(current_user)
     notification=current_user.active_notifications.new(
       visited_id:self.id,
