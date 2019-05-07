@@ -49,6 +49,10 @@ class User < ApplicationRecord
     self.active_relationship.create(followed_id: user.id)
   end
 
+  def like(micropost)
+    self.active_like.create(micropost_id: micropost.id)
+  end
+
   def create_notification_by(current_user)
     notification=current_user.active_notifications.new(
       visited_id:self.id,
