@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Relationship", type: :system do
+RSpec.describe "Like", type: :system do
   let(:tom){FactoryBot.create(:user,name:'tom')}
   let(:bob){FactoryBot.create(:user,name:'bob')}
   let(:bob_post){FactoryBot.create(:micropost,contributer:bob)}

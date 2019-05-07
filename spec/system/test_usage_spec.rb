@@ -1,14 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "TopPage", type: :system do
-  it 'ヘッダー' do
-    skip '別途実装'
-  end
-
-  it 'フッター' do
-    skip '別途実装'
-  end
-
+RSpec.describe "TestUsage", type: :system do
   context 'かんたん新規登録' do
     scenario '成功' do
       visit root_path
