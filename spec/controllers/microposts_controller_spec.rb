@@ -61,7 +61,7 @@ RSpec.describe MicropostsController, type: :controller do
       end
 
       it '画像がないと投稿できない' do
-        @micropost_params[:image]=nil
+        @micropost_params[:image_data]=nil
         expect{
           post :create, params: {micropost: @micropost_params}
         }.not_to change(@user.microposts,:count)
