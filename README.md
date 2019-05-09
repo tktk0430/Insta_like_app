@@ -26,7 +26,7 @@ https://pumpkin-custard-78083.herokuapp.com/
 - 画像検索機能
 - レスポンシブデザイン対応
 - i18nを用いた国際化
-- (開発)テスト実装(minitest)
+- (開発)テスト実装(RSpec)
 - (開発)サンプルユーザ一括登録
 
 開発環境:CentOS7 (Vagrant使用)(Qiita執筆 : [Rails環境構築](https://qiita.com/T-Hiros/items/ade733e4dff00be7a0510))
@@ -34,9 +34,9 @@ https://pumpkin-custard-78083.herokuapp.com/
 Ver1.0実装期間 : 14日間, 130時間ほど
 
 # ロードマップ
+- devise導入
 - Facebookログインの実装
+- 管理画面の実装
 - 検索機能の強化（投稿に位置情報を持たせ、現在地からの距離などで検索できるようにしたい)
 - 画像表示の高速化を目的としたClounfrontの導入
 - (開発)開発環境のDocker化
-- (開発)CircleCIによるデプロイ自動化
-- (開発)Rspecでのテスト記述方法の習得
